@@ -4,7 +4,7 @@
 
 Ce projet est une application front-end de Pettys construite avec HTML, Sass et JavaScript.
 
-## Structure du projet
+### Structure du projet
 
 ```
 ├── images/
@@ -27,7 +27,7 @@ Ce projet est une application front-end de Pettys construite avec HTML, Sass et 
 └── package.json
 ```
 
-## Installation
+### Installation
 
 Pour installer les dépendances du projet, exécutez la commande suivante :
 
@@ -35,7 +35,7 @@ Pour installer les dépendances du projet, exécutez la commande suivante :
 npm i
 ```
 
-## Compilation Sass
+### Compilation Sass
 
 Pour compiler automatiquement vos fichiers Sass à chaque modification, utilisez la commande :
 
@@ -45,7 +45,7 @@ npm run sass
 
 Cette commande surveillera vos fichiers Sass et les compilera en CSS à chaque changement.
 
-## Développement
+### Développement
 
 1. Clonez ce dépôt
 2. Déplacer dans ce dépot `cd pettys_project`
@@ -53,7 +53,7 @@ Cette commande surveillera vos fichiers Sass et les compilera en CSS à chaque c
 4. Lancez la compilation Sass avec `npm run sass`
 5. Ouvrez `index.html` dans votre navigateur
 
-## Technologies utilisées
+### Technologies utilisées
 
 - HTML5
 - Sass
