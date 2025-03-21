@@ -48,9 +48,10 @@ Cette commande surveillera vos fichiers Sass et les compilera en CSS à chaque c
 ## Développement
 
 1. Clonez ce dépôt
-2. Installez les dépendances avec `npm i`
-3. Lancez la compilation Sass avec `npm run sass`
-4. Ouvrez `index.html` dans votre navigateur
+2. Déplacer dans ce dépot `cd pettys_project`
+3. Installez les dépendances avec `npm i`
+4. Lancez la compilation Sass avec `npm run sass`
+5. Ouvrez `index.html` dans votre navigateur
 
 ## Technologies utilisées
 
