@@ -1,5 +1,7 @@
 # Pettys_project
 
+## Frontend
+
 Ce projet est une application front-end de Pettys construite avec HTML, Sass et JavaScript.
 
 ## Structure du projet
