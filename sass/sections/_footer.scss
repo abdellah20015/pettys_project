@@ -1,0 +1,163 @@
+.footer {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: $spacing-xl 0;
+    position: relative;
+
+    .container {
+        @include flex(column, center, stretch, nowrap);
+    }
+
+    .footer-grid {
+        @include flex(row, space-between, flex-start, wrap);
+        margin-bottom: $spacing-lg;
+
+        @include responsive(md) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+        margin-bottom: $spacing-md;
+
+        @include responsive(md) {
+            flex: 1 1 20%;
+            margin-bottom: 0;
+        }
+
+        &.newsletter {
+            flex: 1 1 100%;
+
+            @include responsive(md) {
+                flex: 1 1 25%;
+            }
+        }
+    }
+
+    .footer-title {
+        font-size: 1.2rem;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-md;
+        text-transform: uppercase;
+    }
+
+    .footer-title-logo {
+        margin-bottom: $spacing-md;
+
+        .footer-logo {
+            width: 100px;
+            height: auto;
+        }
+    }
+
+    .footer-list {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: $spacing-sm;
+            font-size: 0.9rem;
+
+            a {
+                color: $color-white;
+                text-decoration: none;
+
+                @include hover-effect {
+                    color: $color-accent;
+                }
+            }
+        }
+    }
+
+    .newsletter-form {
+        @include flex(row, flex-start, center, nowrap);
+        margin-bottom: $spacing-sm;
+
+        input {
+            flex: 1;
+            padding: $spacing-sm;
+            border: none;
+            border-radius: $border-radius-sm 0 0 $border-radius-sm;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .btn-newsletter {
+            @include button($color-white);
+            border-radius: 0 $border-radius-sm $border-radius-sm 0;
+            padding: $spacing-sm $spacing-md;
+            background-color: $color-white;
+            color: $color-black;
+
+            @include hover-effect {
+                background-color: $color-gray-light;
+            }
+        }
+    }
+
+    .newsletter-text {
+        font-size: 0.85rem;
+        color: $color-white;
+        opacity: 0.8;
+    }
+
+    .footer-bottom {
+        @include flex(row, space-between, center, wrap);
+        border-top: 1px solid rgba($color-white, 0.2);
+        padding-top: $spacing-md;
+        font-size: 0.85rem;
+
+        .social-icons {
+            @include flex(row, flex-start, center, nowrap);
+            gap: $spacing-sm;
+
+            a {
+                color: $color-white;
+                font-size: 1.2rem;
+
+                @include hover-effect {
+                    color: $color-accent;
+                }
+            }
+        }
+
+        .copyright {
+            margin: $spacing-sm 0;
+        }
+
+        .payment-methods {
+            @include flex(row, flex-end, center, nowrap);
+            gap: $spacing-sm;
+
+            img {
+                height: 20px;
+                width: auto;
+            }
+        }
+    }
+
+    .back-to-top {
+        @include button-reset;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: $color-white;
+        color: $color-black;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        @include flex(row, center, center, nowrap);
+        box-shadow: $shadow-md;
+        opacity: 0.8;
+
+        @include hover-effect {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        i {
+            font-size: 1.2rem;
+        }
+    }
+}

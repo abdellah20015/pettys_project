@@ -1,0 +1,139 @@
+.toys-for-pets {
+    padding: $spacing-xl $spacing-md;
+    background-color: $color-white;
+    text-align: center;
+
+    .container {
+        max-width: $container-max-width;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: $color-secondary;
+        margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+        font-size: $font-size-base * 1.125;
+        color: $color-text-subtitle;
+        margin-bottom: $spacing-lg;
+    }
+
+    .toys-grid {
+        @include flex(row, space-between, stretch, wrap);
+        gap: $spacing-md;
+
+        .toy-item {
+            flex: 1 1 calc(25% - #{$spacing-md});
+            max-width: calc(25% - #{$spacing-md});
+            background: $color-white;
+            border-radius: $border-radius-md;
+            overflow: hidden;
+            box-shadow: $shadow-sm;
+            transition: transform $transition-normal;
+
+            @include hover-effect {
+                transform: scale(1.05);
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .toy-name {
+                font-size: $font-size-base * 1.125;
+                font-weight: $font-weight-medium;
+                color: $color-text-product-name;
+                padding: $spacing-sm;
+                @include truncate;
+            }
+        }
+
+        .toy-item1 {
+            flex: 1 1 calc(25% - $spacing-md);
+            max-width: calc(25% - $spacing-md);
+            background: $color-white;
+            border-radius: $border-radius-md;
+
+            @include hover-effect {
+                transform: scale(1.05);
+            }
+
+            .toy-name {
+                font-size: $font-size-base * 1.125;
+                font-weight: $font-weight-medium;
+                color: $color-text-product-name;
+                padding: $spacing-sm;
+                @include truncate;
+            }
+        }
+
+        @include responsive(sm) {
+            .toy-item {
+                flex: 1 1 calc(50% - #{$spacing-md});
+                max-width: calc(50% - #{$spacing-md});
+            }
+        }
+
+        @include responsive(md) {
+            .toy-item {
+                flex: 1 1 calc(33.33% - #{$spacing-md});
+                max-width: calc(33.33% - #{$spacing-md});
+            }
+        }
+
+        @include responsive(lg) {
+            .toy-item {
+                flex: 1 1 calc(25% - #{$spacing-md});
+                max-width: calc(25% - #{$spacing-md});
+            }
+        }
+    }
+
+    .btn-all-toys {
+        @include button-reset;
+        background-color: $color-button-primary;
+        color: $color-white;
+        padding: $spacing-sm $spacing-lg;
+        border-radius: $border-radius-md;
+        font-weight: $font-weight-medium;
+        margin-top: $spacing-lg;
+        transition: background-color $transition-normal;
+
+        @include hover-effect {
+            background-color: $color-button-primary-hover;
+        }
+
+        i {
+            margin-left: $spacing-sm;
+        }
+    }
+
+
+  @media (max-width: 800px) {
+    padding: $spacing-md;
+    .section-title {
+      font-size: 24px;
+    }
+    .section-subtitle {
+      font-size: 14px;
+    }
+    .toys-grid {
+      gap: $spacing-sm;
+      .toy-item, .toy-item1 {
+        flex: 1 1 calc(50% - #{$spacing-sm});
+        max-width: calc(50% - #{$spacing-sm});
+        .toy-name {
+          font-size: 14px;
+        }
+      }
+    }
+    .btn-all-toys {
+      padding: $spacing-xs $spacing-md;
+    }
+  }
+}

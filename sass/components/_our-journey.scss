@@ -1,0 +1,227 @@
+.our-journey {
+    padding: $spacing-xxl 0;
+    background-color: $color-white;
+  
+    .section-header {
+      text-align: center;
+      margin-bottom: $spacing-xl + $spacing-lg;
+  
+      .section-title {
+        font-size: 36px;
+        font-weight: $font-weight-bold;
+        color: $color-secondary;
+        margin-bottom: $spacing-md - 1px;
+        position: relative;
+  
+        &:after {
+          content: '';
+          display: block;
+          width: 60px;
+          height: 3px;
+          background-color: $color-accent;
+          margin: $spacing-md auto 0;
+        }
+      }
+  
+      .section-description {
+        font-size: 18px;
+        color: $color-text-subtitle;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+    }
+  
+    .journey-cards {
+      display: flex;
+      justify-content: center;
+      margin-bottom: $spacing-xxl;
+  
+      .journey-card {
+        display: none;
+        max-width: 1000px;
+        margin: 0 auto;
+        border: $border-width solid $color-gray;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+        box-shadow: $shadow-md;
+  
+        &.active {
+          display: flex;
+          animation: fadeIn $transition-slow forwards;
+        }
+  
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY($spacing-lg); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+  
+        .journey-image {
+          flex: 0 0 50%;
+          height: 350px;
+          overflow: hidden;
+  
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+  
+        .journey-content {
+          flex: 0 0 50%;
+          padding: $spacing-xl;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+  
+          h3 {
+            font-size: 24px;
+            font-weight: $font-weight-semibold;
+            margin-bottom: $spacing-lg;
+            color: $color-text-product-name;
+          }
+  
+          p {
+            font-size: $font-size-base;
+            line-height: 1.8;
+            color: $color-text-subtitle;
+          }
+        }
+      }
+    }
+  
+    .timeline-container {
+      position: relative;
+  
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: $border-width;
+        background-color: $color-gray;
+        z-index: 0;
+      }
+    }
+  
+    .timeline-navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      padding: 0 $spacing-xl;
+  
+      .timeline-nav {
+        background: $color-white;
+        border: $border-width solid $color-gray;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size-base;
+        color: $color-text-subtitle;
+        cursor: pointer;
+        transition: all $transition-normal;
+  
+        &:hover {
+          background-color: $color-gray-light;
+          color: $color-text-product-name;
+        }
+  
+        &:disabled {
+          color: $color-gray-dark;
+          cursor: not-allowed;
+        }
+      }
+  
+      .timeline-years {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 $spacing-lg;
+        background: $color-white;
+        padding: 0 $spacing-lg;
+        flex: 1;
+        max-width: 600px;
+        min-height: 40px;
+  
+        .year {
+          font-size: 18px;
+          font-weight: $font-weight-medium;
+          color: $color-gray-dark;
+          padding: $spacing-sm $spacing-md;
+          cursor: pointer;
+          transition: all $transition-normal;
+          position: relative;
+          text-align: center;
+          background: transparent;
+          z-index: 1;
+  
+          &:hover {
+            color: $color-text-product-name;
+          }
+  
+          &.active {
+            color: $color-black;
+            font-size: 28px;
+            font-weight: $font-weight-bold;
+  
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: -5px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 30px;
+              height: 3px;
+              background-color: $color-accent;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-md) {
+    .our-journey {
+      padding: $spacing-xl + $spacing-sm 0;
+  
+      .journey-cards {
+        .journey-card {
+          flex-direction: column;
+  
+          .journey-image,
+          .journey-content {
+            flex: 0 0 100%;
+          }
+  
+          .journey-image {
+            height: 200px;
+          }
+  
+          .journey-content {
+            padding: $spacing-lg + $spacing-xs;
+          }
+        }
+      }
+  
+      .timeline-navigation {
+        .timeline-years {
+          padding: 0 $spacing-sm;
+  
+          .year {
+            font-size: $font-size-base;
+            padding: $spacing-xs $spacing-sm;
+  
+            &.active {
+              font-size: 22px;
+            }
+          }
+        }
+      }
+    }
+  }

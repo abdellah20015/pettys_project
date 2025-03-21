@@ -1,0 +1,108 @@
+.faq-section {
+    padding: $spacing-xl $spacing-md;
+    background-color: $color-gray-light;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    .container {
+        max-width: $container-max-width;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .section-title {
+        font-size: $font-size-base * 2;
+        font-weight: $font-weight-bold;
+        color: $color-secondary;
+        margin-bottom: $spacing-sm;
+    }
+
+    .faq-intro {
+        font-size: $font-size-base * 1.125;
+        color: $color-text-subtitle;
+        margin-bottom: $spacing-lg;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .faq-accordion {
+        .faq-item {
+            background: $color-white;
+            border-radius: $border-radius-md;
+            margin-bottom: $spacing-md;
+            box-shadow: $shadow-sm;
+            overflow: hidden;
+
+            .faq-question {
+                @include button-reset;
+                width: 100%;
+                padding: $spacing-md;
+                text-align: left;
+                font-size: $font-size-base * 1.125;
+                font-weight: $font-weight-medium;
+                color: $color-text-dark;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                position: relative;
+
+                &:after {
+                    content: '\f107';
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                    position: absolute;
+                    right: $spacing-md;
+                    transition: transform $transition-normal;
+                }
+
+                &.active:after {
+                    transform: rotate(180deg);
+                }
+            }
+
+            .faq-answer {
+                padding: $spacing-md;
+                text-align: left;
+                display: none;
+                color: $color-gray-dark;
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: $url-image-svg;
+        background-size: contain;
+        opacity: 0.3;
+        top: 20px;
+        left: 20px;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: $url-image-svg;
+        background-size: contain;
+        opacity: 0.3;
+        bottom: 20px;
+        right: 20px;
+        transform: rotate(90deg);
+    }
+
+    @include responsive(sm) {
+        .faq-item .faq-question {
+            font-size: $font-size-base * 1;
+        }
+    }
+}

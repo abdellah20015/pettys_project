@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pettys</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/672/672716.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top bar -->
+    <div id="top-bar" class="top-bar">
+        <div class="container">
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <div class="promo-text">
+                <p>Unlock our exclusive discounts! <button class="btn-small">Discover now</button></p>
+            </div>
+
+            <div class="language-currency">
+                <select name="language" id="language" class="select-custom">
+                    <option value="English" selected>English</option>
+                    <option value="French">French</option>
+                    <option value="Arabic">Arabic</option>
+                </select>
+                <select name="currency" id="currency" class="select-custom">
+                    <option value="USD" selected>USD</option>
+                    <option value="MAD">MAD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/petty-logo.png" alt="Petty's">
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#categories">Categories <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Category 1</a></li>
+                            <li><a href="#">Category 2</a></li>
+                            <li><a href="#">Category 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#shop">Shop</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-right">
+                <div class="account dropdown">
+                    <a href="#" class="icon-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="search" name="q" placeholder="Search..." />
+                        </div>
+                    </ul>
+                </div>
+
+                <div class="account dropdown">
+                    <a href="#" class="icon-btn">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Sign in</a></li>
+                        <li><a href="#">Sign up</a></li>
+                    </ul>
+                </div>
+
+                <div class="cart">
+                    <a href="#" class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-elements">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="paw-print paw-print-1"></div>
+            <div class="paw-print paw-print-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content gsap-fade-in">
+                <h1 class="gsap-fade-in">Your Pet Deserves the Best</h1>
+                <p class="gsap-fade-in">Give your furry friend the care, love, and comfort they deserve with premium
+                    products designed for their happiness and well-being.</p>
+                <button class="btn-primary">Discover Products</button>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-dog-owner.png" alt="Person with Cat" class="gsap-slide-in hero-slide"
+                    data-index="0">
+                <img src="images/hero-dog-owner.png" alt="Person with Cat" class="gsap-slide-in hero-slide"
+                    data-index="1" style="display: none;">
+                <img src="images/hero-dog-owner.png" alt="Person with Cat" class="gsap-slide-in hero-slide"
+                    data-index="2" style="display: none;">
+                <div class="food-bowl gsap-slide-up">
+                    <img src="images/food-bowl.png" alt="Pet Food Bowl">
+                </div>
+                <div class="slider-pagination">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="paw-path"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Partners -->
+    <section class="brand-partners">
+        <div class="container">
+            <div class="brands-slider">
+                <button class="slider-nav prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="brands-wrapper">
+                    <div class="brand-item gsap-scale-in">
+                        <img src="images/brand-furry-family.png" alt="Furry Family">
+                    </div>
+                    <div class="brand-item gsap-scale-in">
+                        <img src="images/brand-puppypaws.png" alt="Puppy Paws">
+                    </div>
+                    <div class="brand-item gsap-scale-in">
+                        <img src="images/brand-pet-bloom.png" alt="Pet Bloom">
+                    </div>
+                    <div class="brand-item gsap-scale-in">
+                        <img src="images/brand-poga.png" alt="Poga">
+                    </div>
+                    <div class="brand-item gsap-scale-in">
+                        <img src="images/brand-furry-family.png" alt="Furry Family">
+                    </div>
+                    <div class="brand-item gsap-scale-in">
+                        <img src="images/brand-puppypaws.png" alt="Puppy Paws">
+                    </div>
+                </div>
+                <button class="slider-nav next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="about" class="new-arrivals">
+        <div class="container">
+            <h2 class="section-title">New Arrivals</h2>
+            <p class="section-subtitle">Navigate by choosing the type of pets you own</p>
+            <div class="products-slider">
+                <button class="slider-nav prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="products-wrapper">
+                    <div class="product-item gsap-scale-in has-badge">
+                        <img src="images/vitapet-lamb.jpg" alt="Vitapet with Lamb">
+                        <h3 class="product-name">Vitapet with Lamb</h3>
+                        <div class="product-price">
+                            <span class="current-price">99.00$</span>
+                            <span class="old-price">200.00$</span>
+                        </div>
+                        <div class="product-rating">★★★★★</div>
+                        <span class="badge">A</span>
+                        <div class="tooltip">
+                            <div class="tooltip-header">
+                                <span class="tooltip-action">Comment</span>
+                                <span class="tooltip-close"><i class="fas fa-times"></i></span>
+                            </div>
+                            <div class="tooltip-content">
+                                <span class="user-badge">A</span>
+                                <div class="user-info">
+                                    <span class="user-name">Agnaou Abdellah</span>
+                                    <span class="timestamp">4 months ago</span>
+                                </div>
+                            </div>
+                            <div class="tooltip-text">onHover</div>
+                            <div class="tooltip-footer">
+                                <span class="tooltip-reply">Reply</span>
+                                <span class="tooltip-arrow"><i class="fas fa-arrow-up"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item gsap-scale-in">
+                        <img src="images/scrumbles-chicken.jpg" alt="Scrumbles Chicken">
+                        <h3 class="product-name">Scrumbles Chicken</h3>
+                        <div class="product-price">
+                            <span class="current-price">70.00$</span>
+                            <span class="old-price">169.00$</span>
+                        </div>
+                        <div class="product-rating">★★★★★</div>
+                    </div>
+                    <div class="product-item gsap-scale-in">
+                        <img src="images/jinx-beef.jpg" alt="Jinx Beef">
+                        <h3 class="product-name">Samantha's Activewear</h3>
+                        <div class="product-price">
+                            <span class="current-price">95.00$</span>
+                            <span class="old-price">179.00$</span>
+                        </div>
+                        <div class="product-rating">★★★★★</div>
+                    </div>
+                    <div class="product-item gsap-scale-in">
+                        <img src="images/whiskas-tuna.jpg" alt="Whiskas Tuna">
+                        <h3 class="product-name">Whiskas Tuna Flavour</h3>
+                        <div class="product-price">
+                            <span class="current-price">65.00$</span>
+                            <span class="old-price">139.00$</span>
+                        </div>
+                        <div class="product-rating">★★★★★</div>
+                    </div>
+                    <div class="product-item gsap-scale-in">
+                        <img src="images/swiss-energy.jpg" alt="Swiss Energy Pets">
+                        <h3 class="product-name">Swiss Energy Pets</h3>
+                        <div class="product-price">
+                            <span class="current-price">89.00$</span>
+                            <span class="old-price">169.00$</span>
+                        </div>
+                        <div class="product-rating">★★★★★</div>
+                    </div>
+                </div>
+                <button class="slider-nav next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sale banner -->
+    <section class="sale-banner">
+        <div class="container">
+            <div class="sale-content">
+                <p class="sale-subtitle">NEW PET GADGETS</p>
+                <h1 class="sale-title">SALE UP TO 70% OFF</h1>
+                <p class="sale-end">Sale ends on September 30th, 2024</p>
+                <button class="btn-shop">Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">Categories</h2>
+            <p class="section-subtitle">Navigate By Choosing The Type of Pets You Own</p>
+            <div class="categories-grid">
+                <div class="category-item">
+                    <img src="images/cat.jpg" alt="Cats">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Cats</h3>
+                    </div>
+                </div>
+                <div class="category-item has-badge">
+                    <img src="images/dog.jpg" alt="Dogs">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Dogs</h3>
+                        <span class="item-count">34 Items</span>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src="images/fish.jpg" alt="Fish">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Fish</h3>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src="images/bird.jpg" alt="Birds">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Birds</h3>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src="images/small-mammal.jpg" alt="Small Mammals">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Small Mammals</h3>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src="images/reptile.jpg" alt="Reptiles">
+                    <div class="category-overlay">
+                        <h3 class="category-name">Reptiles</h3>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-all-categories">All Categories <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Best Seller Section -->
+    <section class="best-seller">
+        <div class="container">
+            <h2 class="section-title">Best Seller</h2>
+            <p class="section-subtitle">Discover our best-selling products from the last three months.</p>
+            <div class="best-seller-grid">
+                <!-- Première rangée -->
+                <div class="best-seller-item">
+                    <img src="images/pet-harness.jpg" alt="Pet Harness">
+                    <h3 class="product-name">Pet Harness</h3>
+                    <div class="product-price">
+                        <span class="current-price">50.00€</span>
+                    </div>
+                    <div class="product-rating">★★★★★</div>
+                </div>
+                <div class="best-seller-item">
+                    <img src="images/swiss-energy-pets.jpg" alt="Swiss Energy Pets">
+                    <h3 class="product-name">Swiss Energy Pets</h3>
+                    <div class="product-price">
+                        <span class="current-price">30.00€</span>
+                    </div>
+                    <div class="product-rating">★★★★★</div>
+                </div>
+                <div class="best-seller-item">
+                    <img src="images/petmate-cargo-crate.jpg" alt="Petmate Cargo Crate">
+                    <h3 class="product-name">Petmate Cargo Crate</h3>
+                    <div class="product-price">
+                        <span class="current-price">70.00€</span>
+                    </div>
+                    <div class="product-rating">★★★★★</div>
+                </div>
+                <div class="best-seller-item">
+                    <img src="images/scrumbles-chicken.jpg" alt="Scrumbles - Chicken">
+                    <h3 class="product-name">Scrumbles - Chicken</h3>
+                    <div class="product-price">
+                        <span class="current-price">25.00€</span>
+                    </div>
+                    <div class="product-rating">★★★★☆</div>
+                </div>
+                <div class="best-seller-item">
+                    <img src="images/pet-neck-strap.jpg" alt="Pet Neck Strap">
+                    <h3 class="product-name">Pet Neck Strap</h3>
+                    <div class="product-price">
+                        <span class="current-price">65.00€</span>
+                    </div>
+                    <div class="product-rating">★★★★☆</div>
+                </div>
+                <!-- Deuxième rangée -->
+                <div class="best-seller-item">
+                    <img src="images/whiskas-tuna-flavour.jpg" alt="Whiskas Tuna Flavour">
+                    <h3 class="product-name">Whiskas Tuna Flavour</h3>
+                    <div class="product-price">
+                        <span class="current-price">15.00€</span>
+                    </div>
+                    <div class="product-rating">★★★★★</div>
+                </div>
+                <div class="best-seller-item">
+                    <img src="images/pet-bag-pack.jpg" alt="Pet Bag Pack">
+                    <h3 class="product-name">Pet Bag Pack</h3>
+                    <div class="product-price">
+                        <span class="current-price">60.00€</span>
+                    </div>
+                    <div class="product-rating">★★★★★</div>
+                </div>
+                <div class="best-seller-item">
+                    <img src="images/cat-treadmill-wheel.jpg" alt="Cat Treadmill Wheel">
+                    <h3 class="product-name">Cat Treadmill Wheel</h3>
+                    <div class="product-price">
+                        <span class="current-price">80.00€</span>
+                    </div>
+                    <div class="product-rating">★★★★☆</div>
+                </div>
+                <div class="best-seller-item">
+                    <img src="images/dog-house.jpg" alt="Dog House">
+                    <h3 class="product-name">Dog House</h3>
+                    <div class="product-price">
+                        <span class="current-price">45.00€</span>
+                    </div>
+                    <div class="product-rating">★★★★★</div>
+                </div>
+                <div class="best-seller-item">
+                    <img src="images/vitapet-lamb.jpg" alt="Vitapet With Lamb">
+                    <h3 class="product-name">Vitapet With Lamb</h3>
+                    <div class="product-price">
+                        <span class="current-price">65.00€</span>
+                    </div>
+                    <div class="product-rating">★★★★★</div>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="btn-all-products">All Products <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pet Tech Banner -->
+    <section class="pet-tech-banner">
+        <div class="container">
+            <h2>Your pet's life gets easier with new technologies.</h2>
+            <button class="btn-innovations">Latest Innovations</button>
+        </div>
+    </section>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="images/litter-robot-main.jpg" alt="Litter-Robot Self-Cleaning">
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active">
+                        <img src="images/litter-robot-thumb1.jpg" alt="Litter-Robot Self-Cleaning">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="images/litter-robot-thumb2.jpg" alt="Litter-Robot with Cat">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="images/litter-robot-thumb3.jpg" alt="Litter-Robot App Control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <span class="badge">NEW</span>
+                <h1 class="product-title">Litter-Robot Self-Cleaning</h1>
+
+                <div class="product-rating">
+                    <div class="stars">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star-half-alt star"></i>
+                    </div>
+                    <span class="reviews-count">4.5 (55,580 reviews)</span>
+                </div>
+
+                <div class="product-price">$15.00</div>
+
+                <p class="product-description">
+                    Experience the ultimate relief from dryness with Sweet Dream's luxurious gel formula. Designed to
+                    penetrate deeply into your skin layers.
+                </p>
+
+                <div class="product-colors">
+                    <div class="color-title">Color</div>
+                    <div class="color-options">
+                        <div class="color-option black active"></div>
+                        <div class="color-option gray"></div>
+                        <div class="color-option brown"></div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-cart">Add To Cart</button>
+                    <button class="btn btn-buy">Buy It Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products Section -->
+    <section class="popular-products">
+        <div class="container">
+            <h2 class="section-title">Popular Products</h2>
+            <p class="section-subtitle">Favorite Products Loved by Pet Owners Everywhere!</p>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="images/cat-cover-bed.jpg" alt="Cat Cover Bed">
+                    <h3 class="product-name">Cat Cover Bed</h3>
+                    <div class="product-price">70.00$</div>
+                    <div class="product-rating">★★★★☆ (7,005)</div>
+                </div>
+                <div class="product-card">
+                    <img src="images/biofood-lamb-rice.jpg" alt="Biofood Lamb & Rice">
+                    <h3 class="product-name">Biofood Lamb & Rice</h3>
+                    <div class="product-price">70.00$</div>
+                    <div class="product-rating">★★★★☆ (7,005)</div>
+                </div>
+                <div class="product-card">
+                    <img src="images/smart-pet-feeder.jpg" alt="Smart Pet Feeder">
+                    <h3 class="product-name">Smart Pet Feeder</h3>
+                    <div class="product-price">99.00$</div>
+                    <div class="product-rating">★★★★☆ (99,000)</div>
+                </div>
+                <div class="product-card">
+                    <img src="images/mera-cat-food.jpg" alt="Mera Cat Food">
+                    <h3 class="product-name">Mera Cat Food</h3>
+                    <div class="product-price">70.00$</div>
+                    <div class="product-rating">★★★★☆ (7,005)</div>
+                </div>
+                <div class="product-card">
+                    <img src="images/dog-interactive-toy.jpg" alt="Dog Interactive Toy">
+                    <h3 class="product-name">Dog Interactive Toy</h3>
+                    <div class="product-price">70.00$</div>
+                    <div class="product-rating">★★★★☆ (7,005)</div>
+                </div>
+            </div>
+            <button class="btn-all-products">All Products <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Featured Product Section -->
+    <section class="featured-product">
+        <div class="container">
+            <div class="featured-header">
+                <h2 class="section-title">Choosed For You!</h2>
+                <p class="featured-subtitle">Problem Solver of the Year</p>
+            </div>
+
+            <div class="featured-slider">
+                <div class="featured-slide active">
+                    <div class="featured-content">
+                        <h2 class="featured-title">IT SCRATCH YOU?<br>TRIM YOUR CAT<br>CLAW</h2>
+                        <a class="btn-featured">Claw Trimmer <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="featured-image">
+                        <img src="images/cat-paw.jpg" alt="Cat Paws">
+                    </div>
+                </div>
+                <div class="slider-pagination">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Sale Banner -->
+    <section class="flash-sale-banner">
+        <div class="flash-sale-content">
+            <h1 class="sale-title">Flash Sale: Up to 50% Off for All Food Products!</h1>
+            <p class="sale-end">Sale ends on September 30th, 2024</p>
+        </div>
+        <br>
+        <div class="action-buttons">
+            <button class="btn-flash-sale1">All Collections</button>
+            <button class="btn-flash-sale2">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Toys For Pets Section -->
+    <section class="toys-for-pets">
+        <div class="container">
+            <h2 class="section-title">Toys For Pets</h2>
+            <p class="section-subtitle">Keep your furry friends happy</p>
+            <div class="toys-grid">
+                <div class="toy-item1">
+                    <img src="images/wobble-ball-2.0.jpg" alt="Wobble Ball 2.0">
+                    <h3 class="toy-name">Wobble Ball 2.0</h3>
+                </div>
+                <div class="toy-item">
+                    <img src="images/carllg-dog-chew-toys.jpg" alt="Carllg Dog Chew Toys">
+                    <h3 class="toy-name">Carllg Dog Chew Toys</h3>
+                </div>
+                <div class="toy-item">
+                    <img src="images/barking-brunch.jpg" alt="Barking Brunch">
+                    <h3 class="toy-name">Barking Brunch</h3>
+                </div>
+                <div class="toy-item">
+                    <img src="images/woof-pupsicle.jpg" alt="WOOF Pupsicle">
+                    <h3 class="toy-name">WOOF Pupsicle</h3>
+                </div>
+            </div>
+            <button class="btn-all-toys">All Toys <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="shop" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">FAQ</h2>
+            <p class="faq-intro">
+                If you have any lingering questions that we didn't have the chance to explore, please don't hesitate to
+                reach out via email. We're here to help!
+            </p>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">What Shipping Methods Are Available?</button>
+                    <div class="faq-answer">
+                        <p>Nibh quisque suscipit fermentum netus nulla cras porttitor eiusmod nulla. Orci, dictumst nec
+                            aliquet id ullamcorper netusatis. Fermentum sulla craspor tttore ismod nulla.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do You Ship Internationally?</button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer international shipping to most countries. Please check our shipping policy for
+                            more details.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How long does it take for home delivery?</button>
+                    <div class="faq-answer">
+                        <p>Delivery typically takes 3-5 business days within the country, depending on your location.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How Long Will It Take To Get My Package?</button>
+                    <div class="faq-answer">
+                        <p>Processing takes 1-2 days, and shipping takes an additional 3-7 days, depending on the
+                            destination.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What Payment Methods Are Accepted?</button>
+                    <div class="faq-answer">
+                        <p>We accept Visa, Mastercard, PayPal, and bank transfers.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How Do I Track My Order?</button>
+                    <div class="faq-answer">
+                        <p>You can track your order using the tracking number provided in your confirmation email.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I place an Order?</button>
+                    <div class="faq-answer">
+                        <p>Visit our shop page, select your items, and follow the checkout process to place your order.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our journey -->
+    <section class="our-journey">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Journey</h2>
+                <p class="section-description">Follow our path from humble beginnings to where we are today</p>
+            </div>
+
+            <div class="journey-cards">
+                <div class="journey-card active" data-year="2022">
+                    <div class="journey-image">
+                        <img src="images/timeline-2022.jpg" alt="Our beginning">
+                    </div>
+                    <div class="journey-content">
+                        <h3>NEW STORE OPENING 2022</h3>
+                        <p>We proudly opened our doors for the very first time, marking the start of our pet-loving
+                            adventure. Filled with excitement for this special day, we welcomed friends, family, and
+                            fashion enthusiasts into our shared space, showcasing our unique selections and vision.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-navigation">
+                    <button class="timeline-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="timeline-years">
+                        <span class="year">2020</span>
+                        <span class="year">2021</span>
+                        <span class="year active">2022</span>
+                        <span class="year">2023</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <button class="timeline-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="footer-list">
+                        <li><a href="mailto:support@opaleon.com">Support@opaleon.com</a></li>
+                        <li><a href="tel:+212522123456">Tele: +212 5 22 12 34 56</a></li>
+                        <li>123 Rue Casablanca, Quartier Medina, Marrakech, 40000, Morocco</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Information</h3>
+                    <ul class="footer-list">
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Specials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Collections</h3>
+                    <ul class="footer-list">
+                        <li><a href="#">Luxury</a></li>
+                        <li><a href="#">Skin Care</a></li>
+                        <li><a href="#">Hair Care</a></li>
+                        <li><a href="#">Bundles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Help and Support</h3>
+                    <ul class="footer-list">
+                        <li><a href="#">Contact Information</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy / GDPR</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column newsletter">
+                    <h3 class="footer-title-logo">
+                        <img src="images/petty-logo.png" alt="Pettys Logo" class="footer-logo">
+                    </h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn-newsletter">Send</button>
+                    </form>
+                    <p class="newsletter-text">Glow from the inside out! Inbox to INBOX!</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="copyright">&copy; Pettys 2024, All Rights Reserved</p>
+                <div class="payment-methods">
+                    <img src="images/icons_payment 1.png" alt="payment">
+                </div>
+            </div>
+        </div>
+        <button href="#top-bar" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

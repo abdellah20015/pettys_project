@@ -1,0 +1,278 @@
+.container {
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    
+    @include responsive(md) {
+      padding: 0 $spacing-lg;
+    }
+  }
+  
+  .top-bar {
+    background-color: $color-secondary;
+    color: $color-white;
+    padding: $spacing-xs 0;
+    
+    .container {
+      @include flex(row, space-between, center);
+    }
+    
+    .social-icons {
+      @include flex(row, flex-start, center);
+      gap: $spacing-md;
+      
+      a {
+        color: $color-white;
+        font-size: 14px;
+        @include hover-effect {
+          color: $color-accent;
+        }
+      }
+    }
+    
+    .promo-text {
+      @include flex(row, center, center);
+      font-size: 14px;
+      
+      .btn-small {
+        @include button-reset;
+        background-color: $color-accent;
+        color: $color-secondary;
+        padding: 2px $spacing-sm;
+        border-radius: $border-radius-sm;
+        margin-left: $spacing-xs;
+        font-weight: $font-weight-medium;
+        font-size: 12px;
+        
+        @include hover-effect {
+          background-color: darken($color-accent, 10%);
+        }
+      }
+    }
+    
+    .language-currency {
+      @include flex(row, flex-end, center);
+      gap: $spacing-md;
+      
+      .select-custom {
+        background-color: transparent;
+        color: $color-white;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        padding-right: $spacing-lg;
+        text-align: center;
+        appearance: none;
+        background-image: $image-svg-language;
+        background-repeat: no-repeat;
+        background-position: right center;
+        
+        &:focus {
+          outline: none;
+        }
+        
+        option {
+          background-color: $color-white;
+          color: $color-black;
+        }
+      }
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        flex-direction: column;
+        padding: $spacing-xs;
+      }
+      .social-icons {
+        margin-bottom: $spacing-sm;
+        gap: $spacing-sm;
+      }
+      .promo-text {
+        margin: $spacing-sm 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .language-currency {
+        gap: $spacing-sm;
+        .select-custom {
+          font-size: 12px;
+          padding-right: $spacing-md;
+        }
+      }
+    }
+
+  }
+  
+  .main-header {
+    background-color: $color-white;
+    padding: $spacing-md 0;
+    box-shadow: $shadow-sm;
+    position: relative;
+    z-index: 100;
+    
+    .container {
+      @include flex(row, space-between, center);
+    }
+    
+    .logo {
+      img {
+        max-height: 40px;
+      }
+    }
+  }
+  
+  .main-nav {
+    .nav-list {
+      @include flex(row, center, center);
+      gap: $spacing-xl;
+      
+      .nav-item {
+        position: relative;
+        
+        a {
+          color: $color-black;
+          font-weight: $font-weight-medium;
+          @include hover-effect {
+            color: $color-primary;
+          }
+          
+          i {
+            font-size: 10px;
+            margin-left: $spacing-xs;
+          }
+        }
+        
+        &.active a {
+          color: $color-primary;
+        }
+        
+        &.has-dropdown {
+          &:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $color-white;
+    min-width: 180px;
+    padding: $spacing-md;
+    box-shadow: $shadow-md;
+    border-radius: $border-radius-sm;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY($spacing-sm);
+    transition: all $transition-normal;
+    z-index: 10;
+    
+    li {
+      margin-bottom: $spacing-sm;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      a {
+        display: block;
+        color: $color-black;
+        font-size: 14px;
+        font-weight: $font-weight-regular;
+        padding: $spacing-xs 0;
+        
+        @include hover-effect {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+  
+  .nav-right {
+    @include flex(row, flex-end, center);
+    gap: $spacing-lg;
+    
+    .search-box {
+      @include flex(row, flex-start, center);
+      position: relative;
+      
+      i {
+        position: absolute;
+        left: $spacing-sm;
+        color: $color-gray-dark;
+        font-size: 14px;
+      }
+      
+      input {
+        background-color: $color-gray-light;
+        border: none;
+        border-radius: $border-radius-lg;
+        padding: $spacing-sm $spacing-lg $spacing-sm ($spacing-lg + $spacing-sm);
+        width: 180px;
+        font-size: 14px;
+        
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+        }
+        
+        &::placeholder {
+          color: $color-gray-dark;
+        }
+      }
+    }
+    
+    .icon-btn {
+      @include flex(row, center, center);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: $color-black;
+      position: relative;
+      
+      i {
+        font-size: 18px;
+      }
+      
+      @include hover-effect {
+        color: $color-primary;
+      }
+    }
+    
+    .cart-btn {
+      .cart-count {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: $color-primary;
+        color: $color-white;
+        font-size: 10px;
+        font-weight: $font-weight-bold;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        @include flex(row, center, center);
+      }
+    }
+    
+    .account.dropdown {
+      position: relative;
+      
+      &:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      
+      .dropdown-menu {
+        right: 0;
+        left: auto;
+      }
+    }
+  }

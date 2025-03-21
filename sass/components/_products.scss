@@ -1,0 +1,176 @@
+.product-item {
+    background-color: $color-white;
+    border: $border-width solid $color-gray-light;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+    text-align: center;
+    padding: $spacing-md;
+    transition: transform $transition-normal;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .product-name {
+        font-size: 18px;
+        font-weight: $font-weight-semibold;
+        margin: $spacing-sm 0;
+        color: $color-secondary;
+    }
+
+    .product-price {
+        margin: $spacing-sm 0;
+
+        .current-price {
+            font-size: 16px;
+            color: $color-primary;
+            font-weight: $font-weight-medium;
+        }
+
+        .old-price {
+            font-size: 14px;
+            color: $color-gray;
+            text-decoration: line-through;
+            margin-left: $spacing-sm;
+        }
+    }
+
+    .product-rating {
+        font-size: 14px;
+        color: $color-secondary;
+        margin-bottom: $spacing-sm;
+    }
+
+
+    &.has-badge .badge {
+        position: absolute;
+        top: $spacing-md;
+        right: $spacing-md;
+        width: 24px;
+        height: 24px;
+        background-color: $color-badge-bg;
+        color: $color-white;
+        font-size: 14px;
+        font-weight: $font-weight-bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    
+    .tooltip {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 190px;
+        background-color: $color-tooltip-bg; 
+        border-radius: $border-radius-md;
+        box-shadow: $shadow-md;
+        z-index: 3;
+        color: $color-white;
+        padding: $spacing-sm;
+
+        &.active {
+            display: block;
+        }
+
+        .tooltip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: $spacing-xs $spacing-sm;
+
+            .tooltip-action {
+                font-size: 14px;
+                color: $color-gray;
+            }
+
+            .tooltip-close {
+                cursor: pointer;
+                font-size: 14px;
+                color: $color-gray;
+
+                @include hover-effect {
+                    color: $color-white;
+                }
+            }
+        }
+
+        .tooltip-content {
+            display: flex;
+            align-items: center;
+            gap: $spacing-sm;
+            padding: $spacing-sm;
+
+            .user-badge {
+                width: 30px;
+                height: 30px;
+                background-color: $color-badge-bg;
+                color: $color-white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                font-weight: $font-weight-bold;
+            }
+
+            .user-info {
+                display: flex;
+                flex-direction: column;
+
+                .user-name {
+                    font-size: 14px;
+                    font-weight: $font-weight-medium;
+                }
+
+                .timestamp {
+                    font-size: 12px;
+                    color: $color-gray;
+                }
+            }
+        }
+
+        .tooltip-text {
+            padding: $spacing-sm;
+            font-size: 14px;
+            color: $color-white;
+        }
+
+        .tooltip-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: $spacing-xs $spacing-sm;
+
+            .tooltip-reply {
+                font-size: 14px;
+                color: $color-tooltip-reply;
+                cursor: pointer;
+
+                @include hover-effect {
+                    color: lighten($color-tooltip-reply, 10%);
+                }
+            }
+
+            .tooltip-arrow {
+                font-size: 14px;
+                color: $color-gray;
+
+                @include hover-effect {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+.flash-sale-banner {
+  background-color: $color-white;
+  background-image: $image-food-flash;
+  background-size: cover;
+  background-position: center;
+  height: $flash-sale-height;
+  padding: $flash-sale-padding;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .flash-sale-content {
+    color: $color-white;
+    padding-left: $spacing-md;
+
+    .sale-title {
+      font-size: $flash-sale-title-size;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-xs;
+      text-transform: uppercase;
+    }
+
+    .sale-end {
+      font-size: $flash-sale-end-size;
+      font-weight: $font-weight-regular;
+      opacity: 0.8;
+    }
+  }
+
+  .flash-sale-image {
+    img {
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: $spacing-sm;
+    padding-right: $spacing-md;
+
+    .btn-flash-sale1 {
+      @include button($color-pet)
+    }
+
+    .btn-flash-sale2 {
+      @include button($color-rating)
+    }
+
+  }
+
+  @include responsive(md) {
+    height: auto;
+    flex-direction: column;
+    padding: $spacing-md 0;
+    text-align: center;
+
+    .flash-sale-content {
+      padding-left: 0;
+      margin-bottom: $spacing-sm;
+    }
+
+    .action-buttons {
+      padding-right: 0;
+      justify-content: center;
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 800px) {
+    height: auto;
+    padding: $spacing-md;
+    flex-direction: column;
+    text-align: center;
+    .flash-sale-content {
+      padding-left: 0;
+      .sale-title {
+        font-size: 24px;
+      }
+      .sale-end {
+        font-size: 14px;
+      }
+    }
+    .action-buttons {
+      flex-direction: column;
+      gap: $spacing-xs;
+      padding-right: 0;
+      .btn-flash-sale1, .btn-flash-sale2 {
+        width: 100%;
+        padding: $spacing-sm;
+      }
+    }
+  }
+
+}

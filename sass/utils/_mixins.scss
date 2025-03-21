@@ -1,0 +1,102 @@
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin button-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint ==sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+@mixin hover-effect {
+  transition: all $transition-normal;
+
+  &:hover {
+    @content;
+  }
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+@mixin button($color) {
+  @include button-reset;
+  background-color: $color;
+  color: $color-black;
+  padding: 8px 16px;
+  border-radius: $border-radius-sm;
+  font-weight: $font-weight-medium;
+
+  @include hover-effect {
+    background-color: $color;
+    transform: translateY(-1px);
+  }
+}
+
+@mixin btn-all($color-button-primary) {
+  background-color: $color-button-primary;
+  color: $color-white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color $transition-normal;
+}
+
+@mixin color-filter($color) {
+  .product-gallery {
+    .main-image img,
+    .thumbnail-container .thumbnail img {
+      @if $color == "black" {
+        filter: none;
+      } @else if $color == "gray" {
+        filter: grayscale(100%) brightness(80%);
+      } @else if $color == "brown" {
+        filter: sepia(100%) hue-rotate(20deg) saturate(150%) brightness(90%);
+      }
+    }
+  }
+}
