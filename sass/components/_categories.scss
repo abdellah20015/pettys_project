@@ -70,25 +70,6 @@
                     margin-top: 5px;
                 }
             }
-
-            &.has-badge::before {
-                content: 'A';
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                width: 24px;
-                height: 24px;
-                background-color: $color-badge-bg;
-                color: $color-white;
-                font-size: 14px;
-                font-weight: 700;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                z-index: 2;
-                cursor: pointer;
-            }
         }
     }
 
