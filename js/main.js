@@ -300,11 +300,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Section: Categories & New Arrivals - Gestion des tooltips pour les badges
   // =========================================================================
   const badgeItems = document.querySelectorAll(
-    ".category-item.has-badge, .product-item.has-badge"
+    ".category-item, .product-item"
   );
 
   badgeItems.forEach((item) => {
-    const badge = item.querySelector(".badge");
+
     const tooltip = item.querySelector(".tooltip");
     const closeBtn = item.querySelector(".tooltip-close");
 
