@@ -1,7 +1,8 @@
 .toys-for-pets {
     padding: $spacing-xl $spacing-md;
     background-color: $color-white;
-    text-align: center;
+    text-align: $center;
+    margin-bottom: 70px;
 
     .container {
         max-width: $container-max-width;
@@ -9,21 +10,30 @@
     }
 
     .section-title {
-        font-size: 32px;
-        font-weight: 700;
-        color: $color-secondary;
-        margin-bottom: 10px;
+        font-family: $font-family-ubuntu;
+        font-weight: $font-weight-700;
+        font-size: $font-size-32;
+        line-height: 40px;
+        color: $color-black-25;
+        margin-bottom: 41px;
+
     }
 
     .section-subtitle {
-        font-size: $font-size-base * 1.125;
-        color: $color-text-subtitle;
-        margin-bottom: $spacing-lg;
+        font-family: $font-family-sans;
+        font-weight: $font-weight-400;
+        font-size: $font-size-18;
+        line-height: 62px;
+        letter-spacing: 0%;
+        text-align: $center;
+        margin-bottom: 52px;
+
     }
 
     .toys-grid {
         @include flex(row, space-between, stretch, wrap);
         gap: $spacing-md;
+        margin-bottom: 57.78px;
 
         .toy-item {
             flex: 1 1 calc(25% - #{$spacing-md});
@@ -44,13 +54,6 @@
                 object-fit: cover;
             }
 
-            .toy-name {
-                font-size: $font-size-base * 1.125;
-                font-weight: $font-weight-medium;
-                color: $color-text-product-name;
-                padding: $spacing-sm;
-                @include truncate;
-            }
         }
 
         .toy-item1 {
@@ -63,13 +66,6 @@
                 transform: scale(1.05);
             }
 
-            .toy-name {
-                font-size: $font-size-base * 1.125;
-                font-weight: $font-weight-medium;
-                color: $color-text-product-name;
-                padding: $spacing-sm;
-                @include truncate;
-            }
         }
 
         @include responsive(sm) {
@@ -95,14 +91,28 @@
     }
 
     .btn-all-toys {
-        @include button-reset;
-        background-color: $color-button-primary;
+        width: 242px;
+        height: 74px;
+        top: 8830px;
+        left: 598.5px;
+        border-radius: 25px;
+        padding-top: 30px;
+        padding-right: 64px;
+        padding-bottom: 30px;
+        padding-left: 64px;
+        gap: 18px;
+        background: $color-brown-10;
+        font-family: $font-family-ubuntu;
+        font-weight: $font-weight-400;
+        font-size: $font-size-20;
+        line-height: 100%;
+        text-transform: capitalize;
         color: $color-white;
-        padding: $spacing-sm $spacing-lg;
-        border-radius: $border-radius-md;
-        font-weight: $font-weight-medium;
-        margin-top: $spacing-lg;
-        transition: background-color $transition-normal;
+        cursor: $cursor;
+        border: none;
+        text-align: $center;
+
+
 
         @include hover-effect {
             background-color: $color-button-primary-hover;
@@ -114,26 +124,29 @@
     }
 
 
-  @media (max-width: 800px) {
-    padding: $spacing-md;
-    .section-title {
-      font-size: 24px;
-    }
-    .section-subtitle {
-      font-size: 14px;
-    }
-    .toys-grid {
-      gap: $spacing-sm;
-      .toy-item, .toy-item1 {
-        flex: 1 1 calc(50% - #{$spacing-sm});
-        max-width: calc(50% - #{$spacing-sm});
-        .toy-name {
-          font-size: 14px;
+    @media (max-width: 800px) {
+        padding: $spacing-md;
+
+        .section-title {
+            font-size: $font-size-24;
         }
-      }
+
+        .section-subtitle {
+            font-size: $font-size-14;
+        }
+
+        .toys-grid {
+            gap: $spacing-sm;
+
+            .toy-item,
+            .toy-item1 {
+                flex: 1 1 calc(50% - #{$spacing-sm});
+                max-width: calc(50% - #{$spacing-sm});
+            }
+        }
+
+        .btn-all-toys {
+            padding: $spacing-xs $spacing-md;
+        }
     }
-    .btn-all-toys {
-      padding: $spacing-xs $spacing-md;
-    }
-  }
 }

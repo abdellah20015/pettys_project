@@ -1,172 +1,173 @@
 .main-header {
-    background-color: $color-white;
-    padding: $spacing-md 0;
-    box-shadow: $shadow-sm;
-    position: relative;
-    z-index: 100;
-    
-    .container {
-      @include flex(row, space-between, center);
-    }
-    
-    .logo {
-      img {
-        max-height: 40px;
-      }
+  background-color: $color-brown-94;
+  padding: $spacing-md 0;
+  box-shadow: $shadow-sm;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 2px solid $color-white;
+
+  .container {
+    @include flex(row, space-between, center);
+  }
+
+  .logo {
+    img {
+      max-height: 40px;
+      filter: invert(1);
     }
   }
-  
-  .main-nav {
-    .nav-list {
-      @include flex(row, center, center);
-      gap: $spacing-xl;
-      
-      .nav-item {
-        position: relative;
-        
-        a {
-          color: $color-black;
-          font-weight: $font-weight-medium;
-          @include hover-effect {
-            color: $color-primary;
-          }
-          
-          i {
-            font-size: 10px;
-            margin-left: $spacing-xs;
-          }
-        }
-        
-        &.active a {
-          color: $color-primary;
-        }
-        
-        &.has-dropdown {
-          &:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-          }
+}
+
+.main-nav {
+  .nav-list {
+    @include flex(row, center, center);
+    gap: $spacing-xl;
+
+    .nav-item {
+      position: $relative;
+
+      .nav {
+        font-family: $font-family-ubuntu;
+        font-weight: $font-weight-400;
+        font-size: $font-size-18;
+        line-height: 100%;
+        color: $color-white;
+      }
+
+      &.active a {
+        color: $color-primary;
+      }
+
+      &.has-dropdown {
+        &:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
         }
       }
     }
   }
-  
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: $color-white;
-    min-width: 180px;
-    padding: $spacing-md;
-    box-shadow: $shadow-md;
-    border-radius: $border-radius-sm;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY($spacing-sm);
-    transition: all $transition-normal;
-    z-index: 10;
-    
-    li {
-      margin-bottom: $spacing-sm;
-      
-      &:last-child {
-        margin-bottom: 0;
-      }
-      
-      a {
-        display: block;
-        color: $color-black;
-        font-size: 14px;
-        font-weight: $font-weight-regular;
-        padding: $spacing-xs 0;
-        
-        @include hover-effect {
-          color: $color-primary;
-        }
-      }
+}
+
+
+
+.dropdown-menu {
+  position: $absolute;
+  top: 100%;
+  left: 0;
+  background-color: $color-white;
+  min-width: 180px;
+  padding: $spacing-md;
+  box-shadow: $shadow-md;
+  border-radius: $border-radius-sm;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY($spacing-sm);
+  transition: all $transition-normal;
+  z-index: 10;
+
+  li {
+    margin-bottom: $spacing-sm;
+
+    &:last-child {
+      margin-bottom: 0;
     }
-  }
-  
-  .nav-right {
-    @include flex(row, flex-end, center);
-    gap: $spacing-lg;
-    
-    .search-box {
-      @include flex(row, flex-start, center);
-      position: relative;
-      
-      i {
-        position: absolute;
-        left: $spacing-sm;
-        color: $color-gray-dark;
-        font-size: 14px;
-      }
-      
-      input {
-        background-color: $color-gray-light;
-        border: none;
-        border-radius: $border-radius-lg;
-        padding: $spacing-sm $spacing-lg $spacing-sm ($spacing-lg + $spacing-sm);
-        width: 180px;
-        font-size: 14px;
-        
-        &:focus {
-          outline: none;
-          box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
-        }
-        
-        &::placeholder {
-          color: $color-gray-dark;
-        }
-      }
-    }
-    
-    .icon-btn {
-      @include flex(row, center, center);
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
+
+    a {
+      display: block;
       color: $color-black;
-      position: relative;
-      
-      i {
-        font-size: 18px;
-      }
-      
+      font-size: $font-size-14;
+      font-weight: $font-weight-regular;
+      padding: $spacing-xs 0;
+
       @include hover-effect {
         color: $color-primary;
       }
     }
-    
-    .cart-btn {
-      .cart-count {
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        background-color: $color-primary;
-        color: $color-white;
-        font-size: 10px;
-        font-weight: $font-weight-bold;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        @include flex(row, center, center);
-      }
+  }
+}
+
+.nav-right {
+  @include flex(row, flex-end, center);
+  gap: $spacing-lg;
+
+  .search-box {
+    @include flex(row, flex-start, center);
+    position: $relative;
+
+    i {
+      position: $absolute;
+      left: $spacing-sm;
+      color: $color-gray-dark;
+      font-size: $font-size-14;
     }
-    
-    .account.dropdown {
-      position: relative;
-      
-      &:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-      
-      .dropdown-menu {
-        right: 0;
-        left: auto;
-      }
+
+    input {
+      background-color: $color-gray-light;
+      border: none;
+      border-radius: $border-radius-lg;
+      padding: $spacing-sm $spacing-lg $spacing-sm (
+        $spacing-lg + $spacing-sm
+      );
+    width: 180px;
+    font-size: $font-size-14;
+
+    &:focus {
+      outline: none;
+      box-shadow: $shadow-box-primary;
+    }
+
+    &::placeholder {
+      color: $color-gray-dark;
     }
   }
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: $color-white;
+  position: $relative;
+
+  i {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include hover-effect {
+    color: $color-primary;
+  }
+}
+
+.cart-btn {
+  .cart-count {
+    position: $absolute;
+    top: -2px;
+    right: -2px;
+    background-color: $color-brown-10;
+    color: $color-white;
+    font-size: $font-size-8;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    @include flex(row, center, center);
+  }
+}
+
+.account.dropdown {
+  position: $relative;
+
+  &:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+}
+}

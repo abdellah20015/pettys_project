@@ -23,22 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
       { y: 50, opacity: 0, duration: 0.8, ease: "back.out(1.5)" },
       "-=0.6"
     )
-    .from(
-      ".paw-print",
-      {
-        scale: 0,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 0.5,
-        ease: "back.out(2)",
-      },
-      "-=0.7"
-    )
-    .from(
-      ".circle",
-      { scale: 0, opacity: 0, stagger: 0.2, duration: 0.8, ease: "power1.out" },
-      "-=0.5"
-    );
 
   gsap.from(".paw-path", {
     backgroundPosition: "-100px 0",
@@ -80,6 +64,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========================================================================
   // Section: Header / Navigation - Gestion du menu mobile
   // =========================================================================
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.main-header');
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
   const createMobileMenu = () => {
     const header = document.querySelector(".main-header");
     const nav = document.querySelector(".main-nav");

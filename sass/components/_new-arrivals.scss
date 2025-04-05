@@ -1,42 +1,49 @@
 .new-arrivals {
   background-color: $color-white;
   padding: $spacing-xl 0;
-  text-align: center;
+  text-align: $center;
+  margin-bottom: 111px;
 
   .section-title {
-    font-size: 32px;
-    font-weight: $font-weight-bold;
-    color: $color-secondary;
-    margin-bottom: $spacing-sm;
+    font-family: $font-family-ubuntu;
+    font-weight: $font-weight-500;
+    font-size: $font-size-34;
+    line-height: 100%;
+    color: $color-black-25;
   }
 
   .section-subtitle {
-    font-size: 16px;
-    color: $color-gray-dark;
-    margin-bottom: $spacing-lg;
+    font-family: $font-family-sans;
+    font-weight: $font-weight-400;
+    font-size: $font-size-18;
+    line-height: 62px;
+    color: $color-black-CC;
+    margin-bottom: 53px;
   }
 
   .products-slider {
-    display: flex;
+    display: $flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    position: relative;
+    align-items: $center;
+    position: $relative;
+    margin-top: 40px;
 
     .slider-nav {
-      width: 40px;
-      height: 40px;
-      border-radius: $border-radius-lg;
+      clip-path: circle(100% at 50% 50%);
       background-color: $color-white;
-      color: $color-primary;
-      font-size: 16px;
-      box-shadow: $shadow-sm;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       border: none;
-      cursor: pointer;
+      font-size: $font-size-16;
+      box-shadow: $shadow-sm;
+      display: $flex;
+      justify-content: $center;
+      align-items: $center;
+      cursor: $cursor;
       z-index: 10;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      position: $absolute;
 
       &.prev {
         left: 0;
@@ -45,111 +52,170 @@
       &.next {
         right: 0;
       }
-
-      &:hover {
-        background-color: $color-secondary;
-        color: $color-white;
-      }
     }
 
     .products-wrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: $spacing-xs;
+      display: $flex;
+      flex-wrap: nowrap;
+      gap: 20px;
       width: calc(100% - 100px);
       margin: 0 auto;
       overflow: hidden;
+      padding: 20px 0;
     }
 
     .product-item {
-      display: flex;
+      flex: 0 0 auto;
+      display: $flex;
       flex-direction: column;
-      align-items: center;
-      border: $border-width solid $color-gray;
-      border-radius: $border-radius-md;
-      padding: $spacing-md;
+      align-items: $center;
       width: 220px;
-      transform: scale(0.9);
-      transition: transform 0.3s ease;
+      transition: $transition-ease-transform;
+      background-color: $color-white-F5;
+
 
       &:hover {
-        transform: scale(1);
+        .product-image-container {
+          transform: translateY(-10px);
+
+          .product-overlay {
+            opacity: 1;
+          }
+        }
       }
 
-      img {
-        max-width: 100%;
-        max-height: 200px;
-        margin-bottom: $spacing-sm;
+      .product-image-container {
+        position: $relative;
+        background-color: $color-white-F5;
+        border: 1px solid $color-yellow-A5;
+        padding: $spacing-md;
+        width: 100%;
+        margin-bottom: 15px;
+        box-shadow: $shadow-box-black;
+        transition: $transition-ease-3;
+
+        img {
+          max-width: 100%;
+          max-height: 180px;
+          display: block;
+          margin: 0 auto;
+        }
+
+        .product-overlay {
+          position: $absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $color-transparent;
+          display: $flex;
+          justify-content: $center;
+          align-items: $center;
+          gap: 10px;
+          opacity: 0;
+          transition: $transition-ease-opacity;
+          border-radius: 12px;
+
+          .overlay-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $color-white;
+            display: $flex;
+            justify-content: $center;
+            transform: translate(-1px, 50px);
+            align-items: $center;
+            cursor: $cursor;
+
+            &:hover {
+              background-color: $color-primary;
+              color: $color-white;
+            }
+          }
+        }
       }
 
       .product-name {
-        font-size: 16px;
+        font-size: $font-size-16;
         font-weight: $font-weight-medium;
-        color: $color-black;
-        margin-bottom: $spacing-sm;
+        color: $color-black-25;
+        margin: 10px 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         width: 100%;
+        text-align: $center;
       }
 
       .product-price {
-        display: flex;
+        display: $flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        justify-content: $center;
+        align-items: $center;
         gap: $spacing-sm;
-        margin-bottom: $spacing-sm;
+        margin-bottom: 8px;
 
         .current-price {
-          font-size: 16px;
+          font-size: $font-size-16;
           font-weight: $font-weight-semibold;
           color: $color-primary;
         }
 
         .old-price {
-          font-size: 14px;
-          color: $color-gray-dark;
+          font-size: $font-size-14;
+          color: $color-brown-9;
           text-decoration: line-through;
         }
       }
 
       .product-rating {
-        font-size: 14px;
-        color: $color-accent;
+        font-size: $font-size-14;
+        color: $color-brown-A5;
       }
     }
   }
+
   @media (max-width: 576px) {
     padding: $spacing-md 0;
+
     .section-title {
-      font-size: 24px;
+      font-size: $font-size-24;
+      margin-bottom: 20px;
     }
+
     .section-subtitle {
-      font-size: 14px;
+      font-size: $font-size-14;
+      line-height: 1.4;
     }
+
     .products-slider {
       .products-wrapper {
         width: 100%;
         gap: $spacing-xs;
       }
+
       .product-item {
         width: 160px;
-        padding: $spacing-sm;
-        img {
-          max-height: 140px;
+
+        .product-image-container {
+          padding: $spacing-sm;
+
+          img {
+            max-height: 120px;
+          }
         }
+
         .product-name {
-          font-size: 14px;
+          font-size: $font-size-14;
         }
+
         .product-price {
           .current-price {
-            font-size: 14px;
+            font-size: $font-size-14;
           }
+
           .old-price {
-            font-size: 12px;
+            font-size: $font-size-12;
           }
         }
       }
@@ -158,17 +224,19 @@
 
   @media (max-width: 768px) and (min-width: 577px) {
     .section-title {
-      font-size: 28px;
+      font-size: $font-size-28;
     }
+
     .products-slider {
       .product-item {
         width: 180px;
-        img {
-          max-height: 160px;
+
+        .product-image-container {
+          img {
+            max-height: 140px;
+          }
         }
       }
     }
   }
-
-  
 }

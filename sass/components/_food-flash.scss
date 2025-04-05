@@ -1,54 +1,115 @@
+.line1 {
+  width: 990.5px;
+  height: 9px;
+  background: linear-gradient(50deg, $color-brown-10 95%, $color-white 95%);
+  margin-bottom: 9px;
+}
+
+.line2 {
+  height: 9px;
+  background: linear-gradient(-50deg, $color-brown-10 75%, $color-white 75%);
+  margin-top: 9px;
+  margin-bottom: 146px;
+}
+
 .flash-sale-banner {
   background-color: $color-white;
   background-image: $image-food-flash;
   background-size: cover;
-  background-position: center;
-  height: $flash-sale-height;
-  padding: $flash-sale-padding;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
+  background-position: $center;
+  width: 1440px;
+  height: 268px;
+  top: 7575px;
+
+
+
+
+
 
   .flash-sale-content {
+    width: 660px;
+    height: 126px;
+    top: 7645px;
+    left: 90px;
     color: $color-white;
-    padding-left: $spacing-md;
+
 
     .sale-title {
-      font-size: $flash-sale-title-size;
-      font-weight: $font-weight-bold;
-      margin-bottom: $spacing-xs;
+      font-family: $font-family-ubuntu;
+      font-weight: $font-weight-500;
+      font-size: $font-size-44;
+      line-height: 52px;
       text-transform: uppercase;
+      width: 660px;
+      height: 82px;
+      top: 7645px;
+      left: 90px;
+      margin-bottom: 32px;
+
+
     }
 
     .sale-end {
-      font-size: $flash-sale-end-size;
-      font-weight: $font-weight-regular;
-      opacity: 0.8;
+      font-family: $font-family-ubuntu;
+      font-weight: $font-weight-400;
+      font-size: $font-size-18;
+      line-height: 62px;
+      width: 400px;
+      height: 12px;
+      top: 7759px;
+      left: 90px;
+
+
     }
   }
 
-  .flash-sale-image {
-    img {
-      height: 100%;
-      object-fit: cover;
-      border-radius: 0;
-      box-shadow: none;
-    }
-  }
+
 
   .action-buttons {
-    display: flex;
-    gap: $spacing-sm;
-    padding-right: $spacing-md;
-
     .btn-flash-sale1 {
-      @include button($color-pet)
+      transform: translateY(-55px);
+      width: 205px;
+      height: 56px;
+      top: 7681.5px;
+      left: 944.5px;
+      border-radius: 14px;
+      padding-top: 22px;
+      padding-right: 44px;
+      padding-bottom: 22px;
+      padding-left: 44px;
+      gap: 10px;
+      font-family: $font-family-ubuntu;
+      text-align: $center;
+      line-height: 100%;
+      text-transform: capitalize;
+      color: var(--black, $color-black-25);
+      border: none;
+      background: $color-white;
+      margin-left: 600px;
+
     }
 
     .btn-flash-sale2 {
-      @include button($color-rating)
+      transform: translateY(-55px);
+      width: 167px;
+      height: 56px;
+      top: 7681.5px;
+      left: 1156.5px;
+      border-radius: 14px;
+      padding-top: 22px;
+      padding-right: 44px;
+      padding-bottom: 22px;
+      padding-left: 44px;
+      gap: 10px;
+      background: $color-yellow-A3;
+      font-family: $font-family-ubuntu;
+      line-height: 100%;
+      text-transform: lowercase;
+      text-transform: capitalize;
+      border: none;
+      color: $color-black-25;
+
+
     }
 
   }
@@ -57,7 +118,7 @@
     height: auto;
     flex-direction: column;
     padding: $spacing-md 0;
-    text-align: center;
+    text-align: $center;
 
     .flash-sale-content {
       padding-left: 0;
@@ -66,32 +127,62 @@
 
     .action-buttons {
       padding-right: 0;
-      justify-content: center;
+      justify-content: $center;
     }
   }
 
-  // Responsive Design
   @media (max-width: 800px) {
+    width: 100%;
     height: auto;
     padding: $spacing-md;
-    flex-direction: column;
-    text-align: center;
+
+    .line1 {
+      width: 100%;
+      height: 6px;
+    }
+
+    .line2 {
+      width: 100%;
+      height: 6px;
+      margin-bottom: 80px;
+    }
+
     .flash-sale-content {
-      padding-left: 0;
+      width: 100%;
+      height: auto;
+      text-align: $center;
+      padding: 0 $spacing-sm;
+
       .sale-title {
-        font-size: 24px;
+        font-size: 28px;
+        line-height: 36px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
       }
+
       .sale-end {
         font-size: 14px;
+        line-height: 24px;
+        width: 100%;
+        height: auto;
       }
     }
+
     .action-buttons {
+      display: $flex;
       flex-direction: column;
-      gap: $spacing-xs;
-      padding-right: 0;
-      .btn-flash-sale1, .btn-flash-sale2 {
+      align-items: $center;
+      gap: $spacing-sm;
+
+      .btn-flash-sale1,
+      .btn-flash-sale2 {
+        transform: translateY(0);
         width: 100%;
-        padding: $spacing-sm;
+        max-width: 180px;
+        height: 48px;
+        padding: 15px 20px;
+        margin-left: 0;
       }
     }
   }

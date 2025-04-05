@@ -7,10 +7,9 @@
     <title>Pettys</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/672/672716.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 </head>
 
 <body>
@@ -18,10 +17,10 @@
     <div id="top-bar" class="top-bar">
         <div class="container">
             <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
             </div>
 
             <div class="promo-text">
@@ -54,14 +53,14 @@
 
             <nav class="main-nav">
                 <ul class="nav-list">
-                    <li class="nav-item active">
-                        <a href="index.html">Home</a>
+                    <li class="nav-item">
+                        <a class="nav" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#about">About</a>
+                        <a class="nav" href="#about">About</a>
                     </li>
                     <li class="nav-item has-dropdown">
-                        <a href="#categories">Categories <i class="fas fa-chevron-down"></i></a>
+                        <a class="nav" href="#categories">Categories <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Category 1</a></li>
                             <li><a href="#">Category 2</a></li>
@@ -69,7 +68,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#shop">Shop</a>
+                        <a class="nav" href="#shop">Shop</a>
                     </li>
                 </ul>
             </nav>
@@ -77,11 +76,11 @@
             <div class="nav-right">
                 <div class="account dropdown">
                     <a href="#" class="icon-btn">
-                        <i class="fas fa-search"></i>
+                        <i class="bi bi-search"></i>
                     </a>
                     <ul class="dropdown-menu">
                         <div class="search-box">
-                            <i class="fas fa-search"></i>
+                            <i class="bi bi-search"></i>
                             <input type="search" name="q" placeholder="Search..." />
                         </div>
                     </ul>
@@ -89,7 +88,7 @@
 
                 <div class="account dropdown">
                     <a href="#" class="icon-btn">
-                        <i class="fas fa-user"></i>
+                        <i class="bi bi-person"></i>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Sign in</a></li>
@@ -99,7 +98,7 @@
 
                 <div class="cart">
                     <a href="#" class="icon-btn cart-btn">
-                        <i class="fas fa-shopping-bag"></i>
+                        <i class="bi bi-bag"></i>
                         <span class="cart-count">0</span>
                     </a>
                 </div>
@@ -109,60 +108,41 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="hero-bg-elements">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="paw-print paw-print-1"></div>
-            <div class="paw-print paw-print-2"></div>
-        </div>
-
         <div class="container">
             <div class="hero-content gsap-fade-in">
-                <h1 class="gsap-fade-in">Your Pet Deserves the Best</h1>
-                <p class="gsap-fade-in">Give your furry friend the care, love, and comfort they deserve with premium
-                    products designed for their happiness and well-being.</p>
+                <h1>Your Pet Deserves the Best</h1>
+                <p>Give your furry friend the care, love, and comfort they deserve with premium products designed for
+                    their happiness and well-being.</p>
                 <button class="btn-primary">Discover Products</button>
-            </div>
-            <div class="hero-image">
-                <img src="images/hero-dog-owner.png" alt="Person with Cat" class="gsap-slide-in hero-slide"
-                    data-index="0">
-                <img src="images/hero-dog-owner.png" alt="Person with Cat" class="gsap-slide-in hero-slide"
-                    data-index="1" style="display: none;">
-                <img src="images/hero-dog-owner.png" alt="Person with Cat" class="gsap-slide-in hero-slide"
-                    data-index="2" style="display: none;">
-                <div class="food-bowl gsap-slide-up">
-                    <img src="images/food-bowl.png" alt="Pet Food Bowl">
-                </div>
                 <div class="slider-pagination">
-                    <span class="dot"></span>
+                    <span class="dot active"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
                 </div>
-                <div class="paw-path"></div>
+            </div>
+            <div class="paw-path">
+                <img src="images/food-bowl.png" alt="Paw Path">
             </div>
         </div>
     </section>
 
-    <!-- Brand Partners -->
+    <!-- Brand Partners Section -->
     <section class="brand-partners">
         <div class="container">
             <div class="brands-slider">
                 <button class="slider-nav prev"><i class="fas fa-chevron-left"></i></button>
                 <div class="brands-wrapper">
                     <div class="brand-item gsap-scale-in">
-                        <img src="images/brand-furry-family.png" alt="Furry Family">
-                    </div>
-                    <div class="brand-item gsap-scale-in">
                         <img src="images/brand-puppypaws.png" alt="Puppy Paws">
-                    </div>
-                    <div class="brand-item gsap-scale-in">
-                        <img src="images/brand-pet-bloom.png" alt="Pet Bloom">
                     </div>
                     <div class="brand-item gsap-scale-in">
                         <img src="images/brand-poga.png" alt="Poga">
                     </div>
                     <div class="brand-item gsap-scale-in">
-                        <img src="images/brand-furry-family.png" alt="Furry Family">
+                        <img src="images/brand-puppypaws.png" alt="Puppy Paws">
+                    </div>
+                    <div class="brand-item gsap-scale-in">
+                        <img src="images/brand-poga.png" alt="Poga">
                     </div>
                     <div class="brand-item gsap-scale-in">
                         <img src="images/brand-puppypaws.png" alt="Puppy Paws">
@@ -182,7 +162,14 @@
                 <button class="slider-nav prev"><i class="fas fa-chevron-left"></i></button>
                 <div class="products-wrapper">
                     <div class="product-item gsap-scale-in">
-                        <img src="images/vitapet-lamb.jpg" alt="Vitapet with Lamb">
+                        <div class="product-image-container">
+                            <img src="images/vitapet-lamb.jpg" alt="Vitapet with Lamb">
+                            <div class="product-overlay">
+                                <div class="overlay-icon"><i class="fas fa-shopping-cart"></i></div>
+                                <div class="overlay-icon"><i class="fas fa-heart"></i></div>
+                                <div class="overlay-icon"><i class="fas fa-eye"></i></div>
+                            </div>
+                        </div>
                         <h3 class="product-name">Vitapet with Lamb</h3>
                         <div class="product-price">
                             <span class="current-price">99.00$</span>
@@ -190,8 +177,16 @@
                         </div>
                         <div class="product-rating">★★★★★</div>
                     </div>
+
                     <div class="product-item gsap-scale-in">
-                        <img src="images/scrumbles-chicken.jpg" alt="Scrumbles Chicken">
+                        <div class="product-image-container">
+                            <img src="images/scrumbles-chicken.jpg" alt="Scrumbles Chicken">
+                            <div class="product-overlay">
+                                <div class="overlay-icon"><i class="fas fa-shopping-cart"></i></div>
+                                <div class="overlay-icon"><i class="fas fa-heart"></i></div>
+                                <div class="overlay-icon"><i class="fas fa-eye"></i></div>
+                            </div>
+                        </div>
                         <h3 class="product-name">Scrumbles Chicken</h3>
                         <div class="product-price">
                             <span class="current-price">70.00$</span>
@@ -199,8 +194,16 @@
                         </div>
                         <div class="product-rating">★★★★★</div>
                     </div>
+
                     <div class="product-item gsap-scale-in">
-                        <img src="images/jinx-beef.jpg" alt="Jinx Beef">
+                        <div class="product-image-container">
+                            <img src="images/jinx-beef.jpg" alt="Jinx Beef">
+                            <div class="product-overlay">
+                                <div class="overlay-icon"><i class="fas fa-shopping-cart"></i></div>
+                                <div class="overlay-icon"><i class="fas fa-heart"></i></div>
+                                <div class="overlay-icon"><i class="fas fa-eye"></i></div>
+                            </div>
+                        </div>
                         <h3 class="product-name">Samantha's Activewear</h3>
                         <div class="product-price">
                             <span class="current-price">95.00$</span>
@@ -208,8 +211,16 @@
                         </div>
                         <div class="product-rating">★★★★★</div>
                     </div>
+
                     <div class="product-item gsap-scale-in">
-                        <img src="images/whiskas-tuna.jpg" alt="Whiskas Tuna">
+                        <div class="product-image-container">
+                            <img src="images/whiskas-tuna.jpg" alt="Whiskas Tuna">
+                            <div class="product-overlay">
+                                <div class="overlay-icon"><i class="fas fa-shopping-cart"></i></div>
+                                <div class="overlay-icon"><i class="fas fa-heart"></i></div>
+                                <div class="overlay-icon"><i class="fas fa-eye"></i></div>
+                            </div>
+                        </div>
                         <h3 class="product-name">Whiskas Tuna Flavour</h3>
                         <div class="product-price">
                             <span class="current-price">65.00$</span>
@@ -217,8 +228,16 @@
                         </div>
                         <div class="product-rating">★★★★★</div>
                     </div>
+
                     <div class="product-item gsap-scale-in">
-                        <img src="images/swiss-energy.jpg" alt="Swiss Energy Pets">
+                        <div class="product-image-container">
+                            <img src="images/swiss-energy.jpg" alt="Swiss Energy Pets">
+                            <div class="product-overlay">
+                                <div class="overlay-icon"><i class="fas fa-shopping-cart"></i></div>
+                                <div class="overlay-icon"><i class="fas fa-heart"></i></div>
+                                <div class="overlay-icon"><i class="fas fa-eye"></i></div>
+                            </div>
+                        </div>
                         <h3 class="product-name">Swiss Energy Pets</h3>
                         <div class="product-price">
                             <span class="current-price">89.00$</span>
@@ -250,41 +269,46 @@
             <h2 class="section-title">Categories</h2>
             <p class="section-subtitle">Navigate By Choosing The Type of Pets You Own</p>
             <div class="categories-grid">
-                <div class="category-item">
+                <div class="category-item large">
                     <img src="images/cat.jpg" alt="Cats">
                     <div class="category-overlay">
                         <h3 class="category-name">Cats</h3>
+                        <span class="item-count" data-items="0"></span>
                     </div>
                 </div>
-                <div class="category-item">
+                <div class="category-item large">
                     <img src="images/dog.jpg" alt="Dogs">
                     <div class="category-overlay">
                         <h3 class="category-name">Dogs</h3>
-                        <span class="item-count">34 Items</span>
+                        <span class="item-count" data-items="34"></span>
                     </div>
                 </div>
-                <div class="category-item">
+                <div class="category-item small">
                     <img src="images/fish.jpg" alt="Fish">
                     <div class="category-overlay">
                         <h3 class="category-name">Fish</h3>
+                        <span class="item-count" data-items="10"></span>
                     </div>
                 </div>
-                <div class="category-item">
+                <div class="category-item small">
                     <img src="images/bird.jpg" alt="Birds">
                     <div class="category-overlay">
                         <h3 class="category-name">Birds</h3>
+                        <span class="item-count" data-items="15"></span>
                     </div>
                 </div>
-                <div class="category-item">
+                <div class="category-item small">
                     <img src="images/small-mammal.jpg" alt="Small Mammals">
                     <div class="category-overlay">
                         <h3 class="category-name">Small Mammals</h3>
+                        <span class="item-count" data-items="8"></span>
                     </div>
                 </div>
-                <div class="category-item">
+                <div class="category-item small">
                     <img src="images/reptile.jpg" alt="Reptiles">
                     <div class="category-overlay">
                         <h3 class="category-name">Reptiles</h3>
+                        <span class="item-count" data-items="5"></span>
                     </div>
                 </div>
             </div>
@@ -398,23 +422,6 @@
     <!-- Product Detail Section -->
     <section class="product-detail">
         <div class="container">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img src="images/litter-robot-main.jpg" alt="Litter-Robot Self-Cleaning">
-                </div>
-                <div class="thumbnail-container">
-                    <div class="thumbnail active">
-                        <img src="images/litter-robot-thumb1.jpg" alt="Litter-Robot Self-Cleaning">
-                    </div>
-                    <div class="thumbnail">
-                        <img src="images/litter-robot-thumb2.jpg" alt="Litter-Robot with Cat">
-                    </div>
-                    <div class="thumbnail">
-                        <img src="images/litter-robot-thumb3.jpg" alt="Litter-Robot App Control">
-                    </div>
-                </div>
-            </div>
-
             <div class="product-info">
                 <span class="badge">NEW</span>
                 <h1 class="product-title">Litter-Robot Self-Cleaning</h1>
@@ -449,6 +456,23 @@
                 <div class="action-buttons">
                     <button class="btn btn-cart">Add To Cart</button>
                     <button class="btn btn-buy">Buy It Now</button>
+                </div>
+            </div>
+
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="images/litter-robot-main.jpg" alt="Litter-Robot Self-Cleaning">
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active">
+                        <img src="images/litter-robot-thumb1.jpg" alt="Litter-Robot Self-Cleaning">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="images/litter-robot-thumb2.jpg" alt="Litter-Robot with Cat">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="images/litter-robot-thumb3.jpg" alt="Litter-Robot App Control">
+                    </div>
                 </div>
             </div>
         </div>
@@ -509,9 +533,6 @@
                         <h2 class="featured-title">IT SCRATCH YOU?<br>TRIM YOUR CAT<br>CLAW</h2>
                         <a class="btn-featured">Claw Trimmer <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="featured-image">
-                        <img src="images/cat-paw.jpg" alt="Cat Paws">
-                    </div>
                 </div>
                 <div class="slider-pagination">
                     <div class="dot active"></div>
@@ -522,17 +543,18 @@
     </section>
 
     <!-- Flash Sale Banner -->
+    <div class="line1"></div>
     <section class="flash-sale-banner">
         <div class="flash-sale-content">
             <h1 class="sale-title">Flash Sale: Up to 50% Off for All Food Products!</h1>
             <p class="sale-end">Sale ends on September 30th, 2024</p>
         </div>
-        <br>
         <div class="action-buttons">
             <button class="btn-flash-sale1">All Collections</button>
             <button class="btn-flash-sale2">Shop Now</button>
         </div>
     </section>
+    <div class="line2"></div>
 
     <!-- Toys For Pets Section -->
     <section class="toys-for-pets">
@@ -542,19 +564,15 @@
             <div class="toys-grid">
                 <div class="toy-item1">
                     <img src="images/wobble-ball-2.0.jpg" alt="Wobble Ball 2.0">
-                    <h3 class="toy-name">Wobble Ball 2.0</h3>
                 </div>
                 <div class="toy-item">
                     <img src="images/carllg-dog-chew-toys.jpg" alt="Carllg Dog Chew Toys">
-                    <h3 class="toy-name">Carllg Dog Chew Toys</h3>
                 </div>
                 <div class="toy-item">
                     <img src="images/barking-brunch.jpg" alt="Barking Brunch">
-                    <h3 class="toy-name">Barking Brunch</h3>
                 </div>
                 <div class="toy-item">
                     <img src="images/woof-pupsicle.jpg" alt="WOOF Pupsicle">
-                    <h3 class="toy-name">WOOF Pupsicle</h3>
                 </div>
             </div>
             <button class="btn-all-toys">All Toys <i class="fas fa-arrow-right"></i></button>
@@ -624,15 +642,30 @@
     <!-- Our journey -->
     <section class="our-journey">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Journey</h2>
-                <p class="section-description">Follow our path from humble beginnings to where we are today</p>
-            </div>
-
             <div class="journey-cards">
-                <div class="journey-card active" data-year="2022">
+                <div class="journey-card" data-year="2020">
                     <div class="journey-image">
-                        <img src="images/timeline-2022.jpg" alt="Our beginning">
+                        <img src="images/timeline-2020.jpg" alt="Starting Our Journey 2020">
+                    </div>
+                    <div class="journey-content">
+                        <h3>Starting Our Journey 2020</h3>
+                        <p>We began our small operation with a simple vision to bring quality pet products to our
+                            community.</p>
+                    </div>
+                </div>
+                <div class="journey-card" data-year="2021">
+                    <div class="journey-image">
+                        <img src="images/timeline-2021.jpg" alt="First Expansion 2021">
+                    </div>
+                    <div class="journey-content">
+                        <h3>First Expansion 2021</h3>
+                        <p>After a successful first year, we expanded our product line and moved to a larger location.
+                        </p>
+                    </div>
+                </div>
+                <div class="journey-card" data-year="2022">
+                    <div class="journey-image">
+                        <img src="images/timeline-2022.jpg" alt="NEW STORE OPENING 2022">
                     </div>
                     <div class="journey-content">
                         <h3>NEW STORE OPENING 2022</h3>
@@ -641,8 +674,27 @@
                             fashion enthusiasts into our shared space, showcasing our unique selections and vision.</p>
                     </div>
                 </div>
+                <div class="journey-card" data-year="2023">
+                    <div class="journey-image">
+                        <img src="images/timeline-2023.jpg" alt="Online Store Launch 2023">
+                    </div>
+                    <div class="journey-content">
+                        <h3>Online Store Launch 2023</h3>
+                        <p>We embraced digital transformation with the launch of our online store, reaching pet lovers
+                            nationwide.</p>
+                    </div>
+                </div>
+                <div class="journey-card" data-year="2024">
+                    <div class="journey-image">
+                        <img src="images/timeline-2024.jpg" alt="International Recognition 2024">
+                    </div>
+                    <div class="journey-content">
+                        <h3>International Recognition 2024</h3>
+                        <p>Our dedication to quality and innovation earned us international recognition in the pet
+                            fashion industry.</p>
+                    </div>
+                </div>
             </div>
-
             <div class="timeline-container">
                 <div class="timeline-navigation">
                     <button class="timeline-nav prev"><i class="fas fa-chevron-left"></i></button>
@@ -658,6 +710,7 @@
             </div>
         </div>
     </section>
+
 
 
     <!-- Footer Section -->
@@ -712,10 +765,10 @@
             </div>
             <div class="footer-bottom">
                 <div class="social-icons">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                 </div>
                 <p class="copyright">&copy; Pettys 2024, All Rights Reserved</p>
                 <div class="payment-methods">
@@ -729,7 +782,9 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main1.js"></script>
+    <script src="js/sliders.js"></script>
+    <script src="js/categories.js"></script>
 </body>
 
 </html>

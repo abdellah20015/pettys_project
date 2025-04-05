@@ -1,6 +1,7 @@
 .popular-products {
   padding: $spacing-xl 0;
   background-color: $color-white;
+  margin-bottom: 144px;
 
   .container {
     max-width: $container-max-width;
@@ -9,29 +10,37 @@
   }
 
   .section-title {
-    font-family: $font-primary;
-    font-size: 2rem;
-    font-weight: $font-weight-bold;
-    color: $color-secondary;
-    text-align: center;
-    margin-bottom: $spacing-sm;
+    font-family: $font-family-ubuntu;
+    font-weight: $font-weight-500;
+    font-size: $font-size-34;
+    line-height: 62px;
+    letter-spacing: -2%;
+    text-align: $center;
+    color: var(--black, $color-black-25);
+    margin-bottom: 28px;
   }
 
   .section-subtitle {
-    font-family: $font-primary;
-    font-size: 1rem;
-    font-weight: $font-weight-regular;
-    color: $color-text-subtitle;
-    text-align: center;
-    margin-bottom: $spacing-xl;
+    font-family: $font-family-sans;
+    font-weight: $font-weight-400;
+    font-size: $font-size-18;
+    line-height: 62px;
+    letter-spacing: 0%;
+    text-align: $center;
+    color: $color-black-CC;
+    margin-bottom: 66px;
+
+
+
   }
 
   .products-grid {
     @include flex(row, center, stretch, wrap);
     gap: $spacing-lg;
+    margin-bottom: 39px;
 
     @include responsive(md) {
-      display: grid;
+      display: $grid;
       grid-template-columns: repeat(3, 1fr);
     }
 
@@ -47,7 +56,7 @@
     overflow: hidden;
     width: 100%;
     max-width: 220px;
-    text-align: center;
+    text-align: $center;
     transition: transform $transition-normal;
 
     &:hover {
@@ -58,6 +67,7 @@
       width: 100%;
       height: 180px;
       object-fit: cover;
+      border: 1px solid $color-yellow-A5;
     }
 
     .product-name {
@@ -92,25 +102,72 @@
     }
   }
 
-  
+
   .btn-all-products {
-    @include button-reset;
-    @include flex(row, center, center);
-    background-color: $color-button-categories;
-    color: $color-white;
-    font-family: $font-primary;
-    font-size: 1rem;
-    font-weight: $font-weight-medium;
-    padding: $spacing-sm $spacing-lg;
-    border-radius: $border-radius-md;
-    margin: $spacing-xl auto 0;
-    display: block;
-    @include hover-effect {
-      background-color: $color-button-categories-hover;
-    }
+    @include flex(row, center, stretch, wrap);
+    transform: translate(460px, -10px);
+    width: 381px;
+    height: 68px;
+    top: 6253px;
+    left: 821px;
+    border-radius: 15px;
+    padding-top: 28px;
+    padding-right: 30px;
+    padding-bottom: 28px;
+    padding-left: 30px;
+    gap: 10px;
+    background: $color-brown-10;
+
 
     i {
       margin-left: $spacing-xs;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .popular-products {
+      padding: $spacing-md 0;
+      margin-bottom: 80px;
+    }
+
+    .container {
+      padding: 0 $spacing-sm;
+    }
+
+    .section-title {
+      font-size: $font-size-24;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      font-size: $font-size-16;
+      line-height: 30px;
+      margin-bottom: 40px;
+    }
+
+    .products-grid {
+      display: $flex;
+      flex-direction: column;
+      gap: $spacing-md;
+      margin-bottom: 30px;
+    }
+
+    .product-card {
+      max-width: 100%;
+
+      img {
+        height: 150px;
+      }
+    }
+
+    .btn-all-products {
+      transform: translate(0, 0);
+      width: 100%;
+      max-width: 300px;
+      height: 50px;
+      padding: 15px 20px;
+      margin: 0 auto;
     }
   }
 }

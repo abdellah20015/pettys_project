@@ -100,3 +100,39 @@
     }
   }
 }
+
+@mixin media-786 {
+  grid-template-areas:
+          "large1"
+          "large2"
+          "small1"
+          "small2"
+          "small3"
+          "small4";
+        grid-template-columns: 1fr;
+  }
+  
+  
+  @mixin grid {
+  display: $grid;
+      grid-template-areas:
+        "large1 large2"
+        "small1 small2"
+        "small3 small4";
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+  }
+  
+  @mixin faq-path($opacity) {
+  
+      content: '';
+          position: $absolute;
+          width: 100px;
+          height: 100px;
+          background: $image-paw-print;
+          background-size: contain;
+          opacity: $opacity;
+  
+  } 
+  

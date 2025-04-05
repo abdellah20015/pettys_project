@@ -3,7 +3,7 @@
     border: $border-width solid $color-gray-light;
     border-radius: $border-radius-md;
     overflow: hidden;
-    text-align: center;
+    text-align: $center;
     padding: $spacing-md;
     transition: transform $transition-normal;
 
@@ -28,13 +28,13 @@
         margin: $spacing-sm 0;
 
         .current-price {
-            font-size: 16px;
+            font-size: $font-size-16;
             color: $color-primary;
             font-weight: $font-weight-medium;
         }
 
         .old-price {
-            font-size: 14px;
+            font-size: $font-size-14;
             color: $color-gray;
             text-decoration: line-through;
             margin-left: $spacing-sm;
@@ -42,19 +42,19 @@
     }
 
     .product-rating {
-        font-size: 14px;
+        font-size: $font-size-14;
         color: $color-secondary;
         margin-bottom: $spacing-sm;
     }
 
-    
+
     .tooltip {
         display: none;
-        position: absolute;
+        position: $absolute;
         top: 50px;
         right: 0;
         width: 190px;
-        background-color: $color-tooltip-bg; 
+        background-color: $color-tooltip-bg;
         border-radius: $border-radius-md;
         box-shadow: $shadow-md;
         z-index: 3;
@@ -66,19 +66,19 @@
         }
 
         .tooltip-header {
-            display: flex;
+            display: $flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: $center;
             padding: $spacing-xs $spacing-sm;
 
             .tooltip-action {
-                font-size: 14px;
+                font-size: $font-size-14;
                 color: $color-gray;
             }
 
             .tooltip-close {
-                cursor: pointer;
-                font-size: 14px;
+                cursor: $cursor;
+                font-size: $font-size-14;
                 color: $color-gray;
 
                 @include hover-effect {
@@ -88,8 +88,8 @@
         }
 
         .tooltip-content {
-            display: flex;
-            align-items: center;
+            display: $flex;
+            align-items: $center;
             gap: $spacing-sm;
             padding: $spacing-sm;
 
@@ -99,24 +99,24 @@
                 background-color: $color-badge-bg;
                 color: $color-white;
                 border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 14px;
+                display: $flex;
+                align-items: $center;
+                justify-content: $center;
+                font-size: $font-size-14;
                 font-weight: $font-weight-bold;
             }
 
             .user-info {
-                display: flex;
+                display: $flex;
                 flex-direction: column;
 
                 .user-name {
-                    font-size: 14px;
+                    font-size: $font-size-14;
                     font-weight: $font-weight-medium;
                 }
 
                 .timestamp {
-                    font-size: 12px;
+                    font-size: $font-size-12;
                     color: $color-gray;
                 }
             }
@@ -124,20 +124,20 @@
 
         .tooltip-text {
             padding: $spacing-sm;
-            font-size: 14px;
+            font-size: $font-size-14;
             color: $color-white;
         }
 
         .tooltip-footer {
-            display: flex;
+            display: $flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: $center;
             padding: $spacing-xs $spacing-sm;
 
             .tooltip-reply {
-                font-size: 14px;
+                font-size: $font-size-14;
                 color: $color-tooltip-reply;
-                cursor: pointer;
+                cursor: $cursor;
 
                 @include hover-effect {
                     color: lighten($color-tooltip-reply, 10%);
@@ -145,7 +145,7 @@
             }
 
             .tooltip-arrow {
-                font-size: 14px;
+                font-size: $font-size-14;
                 color: $color-gray;
 
                 @include hover-effect {
