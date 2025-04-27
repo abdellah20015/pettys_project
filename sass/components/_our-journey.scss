@@ -1,7 +1,7 @@
 .our-journey {
   padding: $spacing-xxl 0;
   background-color: $color-white;
-  margin-bottom: 568px;
+  margin-bottom: 86px;
 
 
   .journey-cards {
@@ -55,16 +55,22 @@
         justify-content: $center;
 
         h3 {
-          font-size: $font-size-24;
-          font-weight: $font-weight-semibold;
+          font-family: $font-family-ubuntu;
+          font-weight: $font-weight-700;
+          font-size: $font-size-40;
           margin-bottom: $spacing-lg;
-          color: $color-text-product-name;
+          line-height: 50px;
+          letter-spacing: 0.2px;
+          color: $color-brown-10;
         }
 
         p {
-          font-size: $font-size-base;
-          line-height: 1.8;
-          color: $color-text-subtitle;
+          font-family: $font-family-sans;
+          font-weight: $font-weight-400;
+          font-size: $font-size-14;
+          line-height: 20px;
+          color: $color-gray-73;
+          letter-spacing: 0.2px;
         }
       }
     }
@@ -72,17 +78,6 @@
 
   .timeline-container {
     position: $relative;
-
-    &:before {
-      content: '';
-      position: $absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: $border-width;
-      background-color: $color-gray;
-      z-index: 0;
-    }
   }
 
   .timeline-navigation {
@@ -166,39 +161,65 @@
   }
 }
 
-@media (max-width: $breakpoint-md) {
+@media (max-width: 800px) {
   .our-journey {
-    padding: $spacing-xl + $spacing-sm 0;
-
+    padding: $spacing-lg 0;
+    margin-bottom: 50px;
+    
     .journey-cards {
+      margin-bottom: $spacing-lg;
+      
       .journey-card {
         flex-direction: column;
-
+        max-width: 90%;
+        
         .journey-image,
         .journey-content {
           flex: 0 0 100%;
         }
-
+        
         .journey-image {
-          height: 200px;
+          height: 220px;
         }
-
+        
         .journey-content {
-          padding: $spacing-lg + $spacing-xs;
+          padding: $spacing-md;
+          
+          h3 {
+            font-size: $font-size-28;
+            line-height: 36px;
+            margin-bottom: $spacing-md;
+          }
         }
       }
     }
-
+    
     .timeline-navigation {
+      padding: 0 $spacing-sm;
+      
+      .timeline-nav {
+        width: 32px;
+        height: 32px;
+      }
+      
       .timeline-years {
-        padding: 0 $spacing-sm;
-
+        max-width: 400px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 $spacing-xs;
+        gap: 10px;
+        
         .year {
-          font-size: $font-size-base;
-          padding: $spacing-xs $spacing-sm;
-
+          font-size: $font-size-14;
+          padding: $spacing-xs;
+          white-space: nowrap;
+          
           &.active {
-            font-size: $font-size-22;
+            font-size: $font-size-18;
+            
+            &:after {
+              width: 20px;
+            }
           }
         }
       }

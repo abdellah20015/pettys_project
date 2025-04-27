@@ -3,7 +3,6 @@
   max-width: $container-max-width;
   margin: 0 auto;
   padding: 0 $spacing-md;
-
   @include responsive(md) {
     padding: 0 $spacing-lg;
   }
@@ -20,12 +19,11 @@
 
   .social-icons {
     @include flex(row, flex-start, center);
-    gap: $spacing-md;
+    gap: 26px;
 
     a {
       color: $color-white;
-      font-size: $font-size-14;
-
+      font-size: $font-size-18;
       @include hover-effect {
         color: $color-accent;
       }
@@ -53,10 +51,6 @@
       font-size: $font-size-12;
       line-height: 100%;
       cursor: $cursor;
-
-
-
-
     }
   }
 
@@ -66,10 +60,7 @@
     height: 16px;
     gap: 24px;
 
-
     .select-custom {
-
-
       gap: 2px;
       font-family: $font-family-ubuntu;
       font-weight: $font-weight-400;
@@ -79,10 +70,6 @@
       color: $color-white;
       border: none;
       cursor: $cursor;
-
-
-
-
 
       option {
         background-color: $color-white;

@@ -1,7 +1,6 @@
 .product-detail {
-  padding: $spacing-xxl 52px;
+  padding: 0 52px;
   background-color: $color-white;
-  margin-top: 108px;
 
   .container {
     max-width: $container-max-width;
@@ -111,7 +110,7 @@
       letter-spacing: -2%;
       text-align: $center;
       color: $color-brown-CB;
-      transform: translate(200px, -60px);
+      transform: translate(170px, -60px);
     }
 
     .product-description {
@@ -182,11 +181,19 @@
         cursor: $cursor;
 
         &-cart {
+          font-family: $font-family-sans;
+          font-weight: $font-weight-500;
+          font-size: $font-size-18;
+          line-height: 1;
           background-color: $color-brown-10;
           color: $color-white;
         }
 
         &-buy {
+          font-family: $font-family-sans;
+          font-weight: $font-weight-500;
+          font-size: $font-size-18;
+          line-height: 1;
           background-color: $color-yellow-FF;
           color: $color-black-25;
         }
@@ -222,117 +229,52 @@
 
 
   @media (max-width: 800px) {
-    padding: $spacing-lg 16px;
-    margin-top: 60px;
-
-    .container {
-      flex-direction: column;
-      gap: 30px;
-      padding: 0 $spacing-sm;
+    .product-detail {
+      padding: $spacing-md 20px;
     }
 
     .product-gallery {
-      min-width: 100%;
-      transform: none;
+      flex: 1 1 100%;
+      min-width: auto;
+      margin-bottom: $spacing-lg;
 
       .main-image {
-        width: 100%;
+        width: 50%;
         height: auto;
-        transform: none;
-        margin-bottom: $spacing-md;
-
-        img {
-          width: 100%;
-          height: auto;
-        }
+        transform: translate(0, 0);
       }
 
       .thumbnail-container {
-        display: $flex;
+        transform: translate(0, 0);
         gap: $spacing-xs;
-        transform: none;
-        justify-content: $center;
-        overflow-x: auto;
 
         .thumbnail {
-          width: 80px;
-          height: 60px;
-          flex-shrink: 0;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
+          width: calc(33.33% - #{$spacing-xs});
+          height: auto;
         }
       }
     }
 
     .product-info {
-      min-width: 100%;
+      flex: 1 1 100%;
+      min-width: auto;
+    }
+
+    .product-price {
+      transform: translate(-50px, 50px);
+    }
+
+    .action-buttons {
+      flex-direction: column;
       gap: $spacing-sm;
+      margin-top: $spacing-md;
 
-      .badge {
-        font-size: $font-size-16;
-        line-height: 24px;
-      }
-
-      .product-title {
-        font-size: $font-size-28;
-        line-height: 36px;
-      }
-
-      .product-rating {
-        .reviews-count {
-          font-size: $font-size-12;
-        }
-      }
-
-      .product-price {
-        font-size: $font-size-24;
-        line-height: 32px;
-        transform: none;
-        text-align: left;
-      }
-
-      .product-description {
-        font-size: $font-size-14;
-        line-height: 1.5;
-      }
-
-      .product-colors {
-        .color-title {
-          font-size: $font-size-12;
-        }
-
-        .color-options {
-          gap: $spacing-xs;
-
-          .color-option {
-            width: 20px;
-            height: 20px;
-
-            &.active::after {
-              top: -3px;
-              left: -3px;
-              right: -3px;
-              bottom: -3px;
-            }
-          }
-        }
-      }
-
-      .action-buttons {
-        flex-direction: column;
-        gap: $spacing-sm;
-        margin-top: $spacing-md;
-
-        .btn {
-          width: 100%;
-          height: 48px;
-          padding: 12px 20px;
-          font-size: $font-size-16;
-        }
+      .btn {
+        width: 100%;
+        max-width: 300px;
+        height: 50px;
+        padding: 15px 20px;
+        margin: 0 auto;
       }
     }
   }

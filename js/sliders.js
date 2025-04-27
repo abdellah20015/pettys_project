@@ -1,26 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Données des slides du hero
-  const heroSlides = [
-      {
-          title: "Your Pet Deserves the Best",
-          description: "Give your furry friend the care, love, and comfort they deserve with premium products designed for their happiness and well-being.",
-          backgroundImage: "url('images/heroImage.png')",
-          buttonText: "Discover Products"
-      },
-      {
-          title: "Premium Pet Food & Treats",
-          description: "Nourish your pets with our selection of high-quality food and treats made with natural ingredients for optimal health and energy.",
-          backgroundImage: "url('images/heroImage1.png')",
-          buttonText: "Shop Food"
-      },
-      {
-          title: "Smart Pet Technology",
-          description: "Make pet care easier with our innovative pet tech products designed to monitor, entertain, and improve your pet's daily life.",
-          backgroundImage: "url('images/heroImage2.png')",
-          buttonText: "Explore Tech"
-      }
-  ];
-
   // =========================================================================
   // Section: Hero Section
   // =========================================================================
@@ -71,13 +49,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function nextSlide() {
-      currentSlideIndex = (currentSlideIndex + 1) % heroSlides.length;
       updateSlideContent();
       updateActiveDot();
   }
 
   function updateSlideContent() {
-      const currentSlide = heroSlides[currentSlideIndex];
       heroTitle.textContent = currentSlide.title;
       heroDescription.textContent = currentSlide.description;
       heroButton.textContent = currentSlide.buttonText;
@@ -112,12 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
           y: 20,
           duration: 1,
           delay: 0.9
-      });
-
-      gsap.from('.paw-path', {
-          x: -50,
-          duration: 1.2,
-          delay: 1.2
       });
   } else {
       console.warn("GSAP n'est pas chargé, les animations ne fonctionneront pas");

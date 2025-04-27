@@ -176,8 +176,8 @@
         right: 20px;
         background-color: $color-white;
         color: $color-black;
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         @include flex(row, center, center, nowrap);
         box-shadow: $shadow-md;
@@ -189,7 +189,7 @@
         }
 
         i {
-            font-size: 1.2rem;
+            font-size: 25px;
         }
     }
 

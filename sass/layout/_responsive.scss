@@ -45,10 +45,7 @@
 .main-nav {
   .nav-list {
     @include flex(row, center, center);
-    gap: $spacing-xl;
-
-
-
+    gap: 40px;
 
     .nav-item {
       position: $relative;

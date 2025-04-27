@@ -21,17 +21,14 @@
   height: 268px;
   top: 7575px;
 
-
-
-
-
-
   .flash-sale-content {
     width: 660px;
     height: 126px;
     top: 7645px;
     left: 90px;
     color: $color-white;
+    margin-left: 50px;
+    margin-top: 20px;
 
 
     .sale-title {
@@ -45,8 +42,7 @@
       top: 7645px;
       left: 90px;
       margin-bottom: 32px;
-
-
+      text-align: left;
     }
 
     .sale-end {
@@ -58,6 +54,7 @@
       height: 12px;
       top: 7759px;
       left: 90px;
+      text-align: left;
 
 
     }
@@ -67,50 +64,24 @@
 
   .action-buttons {
     .btn-flash-sale1 {
-      transform: translateY(-55px);
-      width: 205px;
-      height: 56px;
-      top: 7681.5px;
-      left: 944.5px;
-      border-radius: 14px;
-      padding-top: 22px;
-      padding-right: 44px;
-      padding-bottom: 22px;
-      padding-left: 44px;
-      gap: 10px;
-      font-family: $font-family-ubuntu;
-      text-align: $center;
-      line-height: 100%;
-      text-transform: capitalize;
-      color: var(--black, $color-black-25);
-      border: none;
-      background: $color-white;
-      margin-left: 600px;
-
+      @include btn-flash-sale(
+        205px,
+        56px,
+        $color-white,
+        var(--black, $color-black-25),
+        600px
+      );
     }
-
+    
     .btn-flash-sale2 {
-      transform: translateY(-55px);
-      width: 167px;
-      height: 56px;
-      top: 7681.5px;
-      left: 1156.5px;
-      border-radius: 14px;
-      padding-top: 22px;
-      padding-right: 44px;
-      padding-bottom: 22px;
-      padding-left: 44px;
-      gap: 10px;
-      background: $color-yellow-A3;
-      font-family: $font-family-ubuntu;
-      line-height: 100%;
-      text-transform: lowercase;
-      text-transform: capitalize;
-      border: none;
-      color: $color-black-25;
-
-
+      @include btn-flash-sale(
+        167px,
+        56px,
+        $color-yellow-A3,
+        $color-black-25
+      );
     }
+    
 
   }
 
@@ -166,6 +137,7 @@
         line-height: 24px;
         width: 100%;
         height: auto;
+        margin-bottom: 20px;
       }
     }
 

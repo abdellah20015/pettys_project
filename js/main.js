@@ -1,85 +1,103 @@
 // =========================================================================
-// Section: Top Bar & Header / Navigation - Scroll header with top bar
+// Section: Imports & Setup
 // =========================================================================
 gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.create({
-  trigger: ".hero",        
-  start: "bottom top",    
-  onEnter: () => {
-    if (!document.querySelector('.sticky-header-container')) {
-      const stickyContainer = document.createElement('div');
-      stickyContainer.className = 'sticky-header-container';
-      const topBar = document.querySelector('.top-bar');
-      const mainHeader = document.querySelector('.main-header');
+
+// =========================================================================
+// Section: Top Bar & Header / Navigation - Sticky Header on Scroll
+// =========================================================================
+document.addEventListener("DOMContentLoaded", function () {
+  let isSticky = false;
+
+  // Fonction pour activer le mode sticky
+  const enableStickyHeader = () => {
+    if (!document.querySelector(".sticky-header-container")) {
+      const stickyContainer = document.createElement("div");
+      stickyContainer.className = "sticky-header-container";
+      const topBar = document.querySelector(".top-bar");
+      const mainHeader = document.querySelector(".main-header");
       topBar.parentNode.insertBefore(stickyContainer, topBar);
       stickyContainer.appendChild(topBar);
       stickyContainer.appendChild(mainHeader);
-    }
-    gsap.set(".sticky-header-container", {
-      position: "fixed",
-      top: 0,
-      width: "100%",
-      zIndex: 1001
-    });
 
-    gsap.to(".main-header", {
-      backgroundColor: "#FFFFFF", 
-      borderBottomColor: "#000000",
-      duration: 0.5
-    });
-    gsap.to(".main-nav .nav, .nav-right .icon-btn i", {
-      color: "#000000",             
-      duration: 0.5
-    });
-    gsap.to(".logo img", {
-      filter: "none",               
-      duration: 0.5
-    });
-  },
-  onLeaveBack: () => {
-    const stickyContainer = document.querySelector('.sticky-header-container');
+      gsap.set(".sticky-header-container", {
+        position: "fixed",
+        top: 0,
+        width: "100%",
+        zIndex: 1001,
+      });
+
+      gsap.to(".main-header", {
+        backgroundColor: "#FFFFFF",
+        borderBottomColor: "#000000",
+        duration: 0.5,
+      });
+      gsap.to(".main-nav .nav, .nav-right .icon-btn i", {
+        color: "#000000",
+        duration: 0.5,
+      });
+      gsap.to(".logo img", {
+        filter: "none",
+        duration: 0.5,
+      });
+    }
+    isSticky = true;
+  };
+
+  // Fonction pour désactiver le mode sticky
+  const disableStickyHeader = () => {
+    const stickyContainer = document.querySelector(".sticky-header-container");
     if (stickyContainer) {
-      const topBar = stickyContainer.querySelector('.top-bar');
-      const mainHeader = stickyContainer.querySelector('.main-header');
+      const topBar = stickyContainer.querySelector(".top-bar");
+      const mainHeader = stickyContainer.querySelector(".main-header");
       const parentElement = stickyContainer.parentNode;
-      
+
       stickyContainer.removeChild(topBar);
       stickyContainer.removeChild(mainHeader);
-      
+
       parentElement.insertBefore(topBar, stickyContainer);
       parentElement.insertBefore(mainHeader, stickyContainer);
-      
+
       parentElement.removeChild(stickyContainer);
     }
 
     gsap.to(".main-header", {
-      backgroundColor: "#948373",   
-      borderBottomColor: "#FFFF", 
-      duration: 0.5
+      backgroundColor: "#948373",
+      borderBottomColor: "#FFFF",
+      duration: 0.5,
     });
     gsap.to(".main-nav .nav, .nav-right .icon-btn i", {
-      color: "#FFFFFF",             
-      duration: 0.5
+      color: "#FFFFFF",
+      duration: 0.5,
     });
     gsap.to(".logo img", {
-      filter: "invert(1)", 
-      duration: 0.5
+      filter: "invert(1)",
+      duration: 0.5,
     });
-  }
-});
 
-// =========================================================================
-// Section: Header / Navigation - Gestion du menu mobile
-// =========================================================================
-document.addEventListener("DOMContentLoaded", function () {
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('.main-header');
-    if (window.scrollY > 0) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    isSticky = false;
+  };
+
+  // Écouteur de défilement pour activer/désactiver le sticky header
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0 && !isSticky) {
+      enableStickyHeader();
+    } else if (window.scrollY === 0 && isSticky) {
+      disableStickyHeader();
     }
-});
+
+    // Gestion de la classe scrolled pour le header
+    const header = document.querySelector(".main-header");
+    if (window.scrollY > 0) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
+  // =========================================================================
+  // Section: Header / Navigation - Gestion du menu mobile
+  // =========================================================================
   const createMobileMenu = () => {
     const header = document.querySelector(".main-header");
     const nav = document.querySelector(".main-nav");
@@ -286,41 +304,145 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========================================================================
   const initFeaturedSlider = () => {
     const featuredSlides = document.querySelectorAll(".featured-slide");
-    const dots = document.querySelectorAll(
-      ".featured-product .slider-pagination .dot"
+    const sliderContainer = document.querySelector(
+      ".featured-product .slider-pagination"
     );
-    let currentSlide = 0;
 
-    if (featuredSlides.length === 0 || dots.length === 0) return;
+    if (featuredSlides.length === 0 || !sliderContainer) return;
 
-    const showSlide = (index) => {
-      featuredSlides.forEach((slide, i) => {
-        gsap.to(slide, {
-          opacity: i === index ? 1 : 0.5,
-          duration: 0.5,
-          ease: "power2.out",
-          onComplete: () => {
-            slide.classList.toggle("active", i === index);
-          },
-        });
-      });
+    sliderContainer.innerHTML = `
+    <div class="control-track">
+      <div class="control-handle">
+        <span class="control-arrow control-left"><i class="bi bi-chevron-left"></i></span>
+        <span class="control-arrow control-right"><i class="bi bi-chevron-right"></i></span>
+      </div>
+    </div>
+  `;
 
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-      });
-    };
+    const handle = sliderContainer.querySelector(".control-handle");
+    const track = sliderContainer.querySelector(".control-track");
+    const leftArrow = sliderContainer.querySelector(".control-left");
+    const rightArrow = sliderContainer.querySelector(".control-right");
 
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
-        currentSlide = index;
-        showSlide(currentSlide);
+    let isDragging = false;
+    let startY;
+    let currentPosition = 0.5;
+
+    featuredSlides.forEach((slide) => {
+      gsap.set(slide, {
+        opacity: 0.5,
+        onComplete: () => {
+          slide.classList.add("active");
+        },
       });
     });
 
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % featuredSlides.length;
-      showSlide(currentSlide);
-    }, 6000);
+    const updateSlideOpacity = (position) => {
+      const opacity = 1 - position;
+
+      featuredSlides.forEach((slide) => {
+        gsap.to(slide, {
+          opacity: opacity,
+          duration: 0.2,
+          ease: "power2.out",
+        });
+      });
+    };
+
+    const startDrag = (e) => {
+      if (
+        e.target.classList.contains("control-arrow") ||
+        e.target.tagName === "I"
+      )
+        return;
+
+      isDragging = true;
+      e.preventDefault();
+
+      if (e.type === "touchstart") {
+        startY = e.touches[0].clientY;
+      } else {
+        startY = e.clientY;
+      }
+
+      gsap.to(handle, {
+        scale: 1.05,
+        duration: 0.2,
+        ease: "power2.out",
+      });
+    };
+
+    const drag = (e) => {
+      if (!isDragging) return;
+
+      let trackRect = track.getBoundingClientRect();
+      let currentY = e.type === "touchmove" ? e.touches[0].clientY : e.clientY;
+      let position = (currentY - trackRect.top) / trackRect.height;
+
+      position = Math.max(0, Math.min(position, 1));
+      currentPosition = position;
+
+      gsap.set(handle, {
+        top: `${position * 100}%`,
+        y: "-50%",
+      });
+
+      updateSlideOpacity(position);
+    };
+
+    const endDrag = () => {
+      if (!isDragging) return;
+      isDragging = false;
+
+      gsap.to(handle, {
+        scale: 1,
+        duration: 0.2,
+        ease: "power2.out",
+      });
+    };
+
+    const moveLeft = () => {
+      currentPosition = Math.max(0, currentPosition - 0.1);
+
+      gsap.to(handle, {
+        top: `${currentPosition * 100}%`,
+        y: "-50%",
+        duration: 0.3,
+        ease: "power2.out",
+      });
+
+      updateSlideOpacity(currentPosition);
+    };
+
+    const moveRight = () => {
+      currentPosition = Math.min(1, currentPosition + 0.1);
+
+      gsap.to(handle, {
+        top: `${currentPosition * 100}%`,
+        y: "-50%",
+        duration: 0.3,
+        ease: "power2.out",
+      });
+
+      updateSlideOpacity(currentPosition);
+    };
+
+    handle.addEventListener("mousedown", startDrag);
+    handle.addEventListener("touchstart", startDrag);
+
+    window.addEventListener("mousemove", drag);
+    window.addEventListener("touchmove", drag, { passive: false });
+
+    window.addEventListener("mouseup", endDrag);
+    window.addEventListener("touchend", endDrag);
+
+    leftArrow.addEventListener("click", moveLeft);
+    rightArrow.addEventListener("click", moveRight);
+
+    gsap.set(handle, {
+      top: "40%",
+      y: "50%",
+    });
 
     gsap.from(".featured-product .featured-title", {
       opacity: 0,
@@ -356,6 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   };
+
   initFeaturedSlider();
 
   // =========================================================================
@@ -389,7 +512,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========================================================================
   // Section: Footer Section
   // =========================================================================
+
   const backToTopBtn = document.querySelector(".back-to-top");
+  backToTopBtn.style.display = "none";
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
       backToTopBtn.style.display = "block";

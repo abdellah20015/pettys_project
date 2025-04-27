@@ -22,6 +22,10 @@
     }
 
     h2 {
+        width: 671px;
+        height: 81px;
+        top: 4524px;
+        left: 384px;
         font-family: $font-family-ubuntu;
         font-weight: $font-weight-500;
         font-size: $font-size-42;
@@ -30,7 +34,6 @@
         text-align: $center;
         color: $color-white-C1;
         margin-bottom: 35px;
-
     }
 
     .btn-innovations {
@@ -39,46 +42,31 @@
         top: 4640px;
         left: 585px;
         border-radius: 24px;
-        padding-top: 25px;
-        padding-right: 50px;
-        padding-bottom: 25px;
-        padding-left: 50px;
         gap: 10px;
         background: $color-yellow-FF;
         font-family: $font-family-sans;
+        font-size: $font-size-20;
+        line-height: 100%;
+        text-transform: capitalize;
         color: var(--black, $color-black-25);
-        font-weight: $font-weight-500;
+        font-weight: $font-weight-400;
         text-align: $center;
         border: none;
         cursor: $cursor;
     }
 
     @media (max-width: 800px) {
-        .pet-tech-banner {
-            height: 200px;
-            padding: $spacing-md;
-            margin-bottom: 50px;
-        }
-
-        .container {
-            padding: 20px 0;
-            border-width: 1px;
-        }
-
         h2 {
-            font-size: $font-size-28;
-            line-height: 36px;
+            width: 100%;
+            font-size: $font-size-32;
+            line-height: 42px;
             margin-bottom: 20px;
         }
 
         .btn-innovations {
-            width: 200px;
-            height: 48px;
-            padding: 15px 30px;
-            font-family: $font-family-sans;
-            color: var(--black, $color-black-25);
-            font-weight: $font-weight-50;
-            text-align: $center;
-        }
+            width: 50%;
+            height: 50px;
+            font-size: $font-size-18;
+        }   
     }
 }

@@ -1,11 +1,9 @@
 .main-header {
   background-color: $color-brown-94;
   padding: $spacing-md 0;
-  box-shadow: $shadow-sm;
   position: fixed;
   width: 100%;
   z-index: 100;
-  border-bottom: 2px solid $color-white;
 
   .container {
     @include flex(row, space-between, center);
@@ -13,7 +11,10 @@
 
   .logo {
     img {
-      max-height: 40px;
+      width: 115.139892578125px;
+      height: 53.415000915527344px;
+      top: 14px;
+      left: 102.59px;
       filter: invert(1);
     }
   }
@@ -22,7 +23,7 @@
 .main-nav {
   .nav-list {
     @include flex(row, center, center);
-    gap: $spacing-xl;
+    gap: 40px;
 
     .nav-item {
       position: $relative;
@@ -90,7 +91,7 @@
 
 .nav-right {
   @include flex(row, flex-end, center);
-  gap: $spacing-lg;
+  gap: 30px;
 
   .search-box {
     @include flex(row, flex-start, center);
@@ -148,7 +149,7 @@
     right: -2px;
     background-color: $color-brown-10;
     color: $color-white;
-    font-size: $font-size-8;
+    font-size: 5.5px;
     width: 11px;
     height: 11px;
     border-radius: 50%;

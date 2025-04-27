@@ -1,0 +1,113 @@
+.social-section {
+  background-color: $color-white-E8;
+  padding: 3rem 1rem;
+  position: $relative;
+  text-align: $center;
+  min-height: 600px;
+
+  .social-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: $relative;
+
+    .social-header {
+      margin-bottom: 2rem;
+
+      .platform {
+        font-family: $font-family-ubuntu;
+        font-size: 0.875rem;
+        font-weight: $font-weight-400;
+        color: $color-brown-CB;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .handle {
+        font-family: $font-family-ubuntu;
+        font-size: 2rem;
+        font-weight: $font-weight-400;
+        color: $color-black-CC;
+        margin: 0.5rem 0;
+      }
+
+      .description {
+        font-family: $font-family-ubuntu;
+        font-size: 1rem;
+        color: $color-black-CC;
+        font-weight: $font-weight-400;
+        margin-bottom: 70px;
+      }
+    }
+
+    .social-posts {
+      display: flex;
+      justify-content: $center;
+      gap: 6px;
+      flex-wrap:nowrap;
+
+      img {
+        width: 227px;
+        height: 196px;
+        object-fit: cover;
+        border-radius: 8px;
+        background: $color-brown-CB;
+      }
+    }
+
+    .paw-path-left {
+      @include paw-path(
+        288.99999610283965px,
+        336.9999954555604px,
+        222.32px,
+        -105deg
+      );
+      transform: translate(-160%, -60%);
+    }
+
+    .paw-path-right {
+      @include paw-path(
+        246.3457932559312px,
+        287.26135088111215px,
+        1242px,
+        75deg
+      );
+        transform: translate(-30%, -10%) rotate(-180deg);
+    }
+  }
+
+  @media (max-width: 800px) {
+    .social-section {
+      padding: 2rem 0.5rem;
+      min-height: auto;
+      
+      .social-content {
+        .social-header {
+          margin-bottom: 1.5rem;
+          
+          .handle {
+            font-size: 1.5rem;
+          }
+          
+          .description {
+            margin-bottom: 40px;
+          }
+        }
+        
+        .social-posts {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+          
+          img {
+            width: 180px;
+            height: 160px;
+          }
+        }
+        
+        .paw-path-left, .paw-path-right {
+          display: none;
+        }
+      }
+    }
+  }
+}
