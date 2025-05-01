@@ -81,27 +81,19 @@
   @media (max-width: 800px) {
     .container {
       flex-direction: column;
-      padding: $spacing-xs;
     }
 
     .social-icons {
-      margin-bottom: $spacing-sm;
-      gap: $spacing-sm;
+      display: none;
     }
 
     .promo-text {
-      margin: 8px 0 20px;
       text-align: $center;
       font-size: $font-size-12;
     }
 
     .language-currency {
-      gap: $spacing-sm;
-
-      .select-custom {
-        font-size: $font-size-12;
-        padding-right: $spacing-md;
-      }
+     display:none;
     }
   }
 

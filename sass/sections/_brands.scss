@@ -54,45 +54,7 @@
 
 
   @media (max-width: 800px) {
-    background: linear-gradient(120deg, $color-white 25%, $color-brown-10 25%);
-    padding: 15px 20px;
-    transform: translate(50px, 50px);
-    margin-bottom: 111px;
-
-    .container {
-      max-width: 100%;
-      padding: 0 10px;
-    }
-
-    .brands-slider {
-      transform: translate(0px, 0px);
-      gap: 12.5px;
-
-      .slider-nav {
-        font-size: $font-size-12;
-        padding: 5px;
-      }
-
-      .brands-wrapper {
-        gap: 50px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-
-        .brand-item {
-          flex: 0 0 auto;
-          width: 100px;
-          scroll-snap-align: center;
-
-          img {
-            width: 100px;
-            height: auto;
-            opacity: 70%;
-          }
-        }
-      }
-    }
+    display: none;
   }
 
 }

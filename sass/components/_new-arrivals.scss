@@ -188,6 +188,7 @@
 
   @media (max-width: 576px) {
     padding: $spacing-md 0;
+    margin-top: 106.33px;
 
     .section-title {
       font-size: $font-size-24;
@@ -202,7 +203,7 @@
     .products-slider {
       .products-wrapper {
         width: 100%;
-        gap: $spacing-xs;
+        margin: 0 auto;
 
         &::before,
         &::after {
@@ -211,13 +212,7 @@
       }
 
       .slider-nav {
-        &.prev {
-          left: 10px;
-        }
-
-        &.next {
-          right: 10px;
-        }
+        display: none;
       }
 
       .product-item {
@@ -227,7 +222,7 @@
           padding: $spacing-sm;
 
           img {
-            max-height: 120px;
+            max-height: 240px;
           }
         }
 
