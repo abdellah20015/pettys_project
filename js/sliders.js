@@ -156,6 +156,14 @@ document.addEventListener('DOMContentLoaded', function() {
               updateActiveYear();
           }
       });
+
+      // Add click event listeners to each year
+      yearItems.forEach((year, index) => {
+        year.addEventListener('click', () => {
+            activeYearIndex = index;
+            updateActiveYear();
+        });
+    });
       
       updateActiveYear();
   } else {
