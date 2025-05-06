@@ -322,6 +322,53 @@ button, input, select, textarea {
     display: none !important;
   }
 }
+@media (max-width: 576px) {
+  .main-header {
+    padding: 8px 0;
+  }
+  .main-header .container {
+    padding: 0 16px;
+  }
+  .main-header .logo img {
+    width: 100px;
+    height: auto;
+  }
+  .main-header .nav-right {
+    gap: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .main-header .logo img {
+    width: 90px;
+  }
+  .main-header .nav-right {
+    gap: 15px;
+  }
+  .main-header .nav-right .icon-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .main-header .nav-right .icon-btn i {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .main-header .logo img {
+    width: 80px;
+  }
+  .main-header .nav-right {
+    gap: 10px;
+  }
+  .main-header .nav-right .icon-btn {
+    width: 30px;
+    height: 30px;
+  }
+  .main-header .nav-right .icon-btn i {
+    width: 18px;
+    height: 18px;
+  }
+}
 .container {
   width: 100%;
   max-width: 1400px;
@@ -428,6 +475,47 @@ button, input, select, textarea {
     display: none;
   }
 }
+@media (max-width: 576px) {
+  .top-bar {
+    padding: 4px 0;
+  }
+  .top-bar .container {
+    padding: 0 8px;
+  }
+  .top-bar .promo-text {
+    font-size: 12px;
+    padding: 0 8px;
+  }
+  .top-bar .promo-text .btn-small {
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+}
+@media (max-width: 480px) {
+  .top-bar .promo-text {
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 0;
+  }
+  .top-bar .promo-text .btn-small {
+    margin-left: 0;
+  }
+}
+@media (max-width: 375px) {
+  .top-bar {
+    padding: 8px 0;
+  }
+  .top-bar .promo-text {
+    font-size: 12px;
+  }
+  .top-bar .promo-text .btn-small {
+    width: 70px;
+    height: 18px;
+    font-size: 10px;
+  }
+}
 
 .hero {
   border-bottom: 0.6px solid rgba(188, 188, 188, 0.8117647059);
@@ -438,6 +526,7 @@ button, input, select, textarea {
   object-fit: contain;
   top: 70px;
   padding-top: 100px;
+  margin-bottom: 20px;
 }
 .hero .hero-bg-elements {
   position: absolute;
@@ -491,14 +580,6 @@ button, input, select, textarea {
   text-transform: capitalize;
   border: none;
   cursor: pointer;
-}
-.hero .paw-path {
-  position: absolute;
-  bottom: 40px;
-  top: 28rem;
-  left: 0;
-  width: 30%;
-  transform: translate(0, 70px);
 }
 @media (max-width: 800px) {
   .hero {
@@ -569,6 +650,71 @@ button, input, select, textarea {
     display: none;
   }
 }
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 70px;
+    height: 90vh;
+  }
+  .hero .hero-content h1 {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 12px;
+  }
+  .hero .hero-content p {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+  .hero .hero-content .btn-primary {
+    padding: 16px 0;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  .hero::before {
+    width: 100px;
+    height: 104px;
+    opacity: 0.6;
+  }
+  .hero::after {
+    width: 180px;
+    height: 180px;
+    opacity: 0.6;
+  }
+}
+@media (max-width: 375px) {
+  .hero {
+    padding-top: 60px;
+    height: 85vh;
+  }
+  .hero .hero-content {
+    padding: 0 10px;
+  }
+  .hero .hero-content h1 {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 10px;
+  }
+  .hero .hero-content p {
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 15px;
+  }
+  .hero .hero-content .btn-primary {
+    padding: 14px 0;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+  .hero::before {
+    width: 80px;
+    height: 84px;
+    opacity: 0.5;
+  }
+  .hero::after {
+    width: 160px;
+    height: 160px;
+    opacity: 0.5;
+  }
+}
 
 .brand-partners {
   background-color: #683210;
@@ -616,6 +762,12 @@ button, input, select, textarea {
   width: 100px;
   height: auto;
   opacity: 70%;
+}
+.brand-partners .paw-path {
+  position: absolute;
+  left: 0;
+  width: 35%;
+  transform: translate(-60px, -95px);
 }
 @media (max-width: 800px) {
   .brand-partners {

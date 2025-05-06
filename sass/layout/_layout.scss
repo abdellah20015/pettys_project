@@ -282,3 +282,67 @@
     display: none !important;
   }
 }
+
+
+@media (max-width: 576px) {
+  .main-header {
+    padding: $spacing-sm 0;
+    
+    .container {
+      padding: 0 $spacing-md;
+    }
+    
+    .logo img {
+      width: 100px;
+      height: auto;
+    }
+    
+    .nav-right {
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    .logo img {
+      width: 90px;
+    }
+    
+    .nav-right {
+      gap: 15px;
+      
+      .icon-btn {
+        width: 32px;
+        height: 32px;
+        
+        i {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .main-header {
+    .logo img {
+      width: 80px;
+    }
+    
+    .nav-right {
+      gap: 10px;
+      
+      .icon-btn {
+        width: 30px;
+        height: 30px;
+        
+        i {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}
