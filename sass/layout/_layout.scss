@@ -301,6 +301,26 @@
       gap: 20px;
     }
   }
+  
+  .main-nav.mobile {
+    width: 85%;
+    left: -85%;
+    padding: $spacing-lg $spacing-md;
+    
+    .nav-list {
+      gap: $spacing-md;
+    }
+    
+    .nav-item a {
+      font-size: $font-size-16 !important;
+    }
+  }
+  
+  .mobile-menu-toggle, .mobile-menu-close {
+    width: 36px;
+    height: 36px;
+    font-size: $font-size-18;
+  }
 }
 
 @media (max-width: 480px) {
@@ -322,11 +342,40 @@
         }
       }
     }
+    
+    .container {
+      padding: 0 $spacing-sm;
+    }
+  }
+  
+  .main-nav.mobile {
+    width: 90%;
+    left: -90%;
+    padding: $spacing-lg $spacing-sm;
+    
+    .nav-item a {
+      font-size: $font-size-15 !important;
+    }
+    
+    .dropdown-menu {
+      padding: $spacing-xs 0 $spacing-xs $spacing-md;
+      
+      li a {
+        font-size: $font-size-14 !important;
+      }
+    }
+  }
+  
+  .mobile-menu-close {
+    top: $spacing-sm;
+    right: $spacing-sm;
   }
 }
 
 @media (max-width: 375px) {
   .main-header {
+    padding: $spacing-xs 0;
+    
     .logo img {
       width: 80px;
     }
@@ -342,6 +391,75 @@
           width: 18px;
           height: 18px;
         }
+      }
+      
+      .cart-btn .cart-count {
+        width: 10px;
+        height: 10px;
+        font-size: 5px;
+      }
+    }
+  }
+  
+  .main-nav.mobile {
+    width: 95%;
+    left: -95%;
+    
+    .nav-list {
+      gap: $spacing-sm;
+      margin-top: $spacing-lg;
+    }
+    
+    .nav-item a {
+      font-size: $font-size-14 !important;
+    }
+    
+    .dropdown-menu li a {
+      font-size: $font-size-12 !important;
+    }
+  }
+  
+  .mobile-menu-toggle, .mobile-menu-close {
+    width: 32px;
+    height: 32px;
+    font-size: $font-size-16;
+  }
+}
+
+@media (max-width: 320px) {
+  .main-header {
+    .logo img {
+      width: 70px;
+    }
+    
+    .nav-right {
+      gap: 8px;
+      
+      .icon-btn {
+        width: 28px;
+        height: 28px;
+        
+        i {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+  
+  .main-nav.mobile {
+    padding: $spacing-md $spacing-xs;
+    
+    .nav-item a {
+      font-size: $font-size-12 !important;
+    }
+    
+    .dropdown-menu {
+      padding-left: $spacing-sm;
+      
+      li a {
+        font-size: $font-size-12 !important;
+        padding: 2*$spacing-xs 0;
       }
     }
   }

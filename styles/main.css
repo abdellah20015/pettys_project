@@ -336,6 +336,22 @@ button, input, select, textarea {
   .main-header .nav-right {
     gap: 20px;
   }
+  .main-nav.mobile {
+    width: 85%;
+    left: -85%;
+    padding: 24px 16px;
+  }
+  .main-nav.mobile .nav-list {
+    gap: 16px;
+  }
+  .main-nav.mobile .nav-item a {
+    font-size: 16px !important;
+  }
+  .mobile-menu-toggle, .mobile-menu-close {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
 }
 @media (max-width: 480px) {
   .main-header .logo img {
@@ -352,8 +368,32 @@ button, input, select, textarea {
     width: 20px;
     height: 20px;
   }
+  .main-header .container {
+    padding: 0 8px;
+  }
+  .main-nav.mobile {
+    width: 90%;
+    left: -90%;
+    padding: 24px 8px;
+  }
+  .main-nav.mobile .nav-item a {
+    font-size: 15px !important;
+  }
+  .main-nav.mobile .dropdown-menu {
+    padding: 4px 0 4px 16px;
+  }
+  .main-nav.mobile .dropdown-menu li a {
+    font-size: 14px !important;
+  }
+  .mobile-menu-close {
+    top: 8px;
+    right: 8px;
+  }
 }
 @media (max-width: 375px) {
+  .main-header {
+    padding: 4px 0;
+  }
   .main-header .logo img {
     width: 80px;
   }
@@ -367,6 +407,59 @@ button, input, select, textarea {
   .main-header .nav-right .icon-btn i {
     width: 18px;
     height: 18px;
+  }
+  .main-header .nav-right .cart-btn .cart-count {
+    width: 10px;
+    height: 10px;
+    font-size: 5px;
+  }
+  .main-nav.mobile {
+    width: 95%;
+    left: -95%;
+  }
+  .main-nav.mobile .nav-list {
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .main-nav.mobile .nav-item a {
+    font-size: 14px !important;
+  }
+  .main-nav.mobile .dropdown-menu li a {
+    font-size: 12px !important;
+  }
+  .mobile-menu-toggle, .mobile-menu-close {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 320px) {
+  .main-header .logo img {
+    width: 70px;
+  }
+  .main-header .nav-right {
+    gap: 8px;
+  }
+  .main-header .nav-right .icon-btn {
+    width: 28px;
+    height: 28px;
+  }
+  .main-header .nav-right .icon-btn i {
+    width: 16px;
+    height: 16px;
+  }
+  .main-nav.mobile {
+    padding: 16px 4px;
+  }
+  .main-nav.mobile .nav-item a {
+    font-size: 12px !important;
+  }
+  .main-nav.mobile .dropdown-menu {
+    padding-left: 8px;
+  }
+  .main-nav.mobile .dropdown-menu li a {
+    font-size: 12px !important;
+    padding: 8px 0;
   }
 }
 .container {
@@ -485,6 +578,8 @@ button, input, select, textarea {
   .top-bar .promo-text {
     font-size: 12px;
     padding: 0 8px;
+    text-align: center;
+    width: 100%;
   }
   .top-bar .promo-text .btn-small {
     width: 80px;
@@ -501,19 +596,32 @@ button, input, select, textarea {
   }
   .top-bar .promo-text .btn-small {
     margin-left: 0;
+    margin-top: 4px;
   }
 }
 @media (max-width: 375px) {
   .top-bar {
-    padding: 8px 0;
+    padding: 4px 0;
   }
   .top-bar .promo-text {
     font-size: 12px;
+    line-height: 1.2;
   }
   .top-bar .promo-text .btn-small {
     width: 70px;
     height: 18px;
     font-size: 10px;
+  }
+}
+@media (max-width: 320px) {
+  .top-bar .promo-text {
+    font-size: 10px;
+    padding: 8px 0;
+  }
+  .top-bar .promo-text .btn-small {
+    width: 65px;
+    height: 16px;
+    font-size: 8px;
   }
 }
 
@@ -674,11 +782,14 @@ button, input, select, textarea {
     width: 100px;
     height: 104px;
     opacity: 0.6;
+    right: 5px;
+    transform: translate(30px, -50%);
   }
   .hero::after {
     width: 180px;
     height: 180px;
     opacity: 0.6;
+    transform: translate(-15px, 210px);
   }
 }
 @media (max-width: 375px) {
@@ -687,10 +798,10 @@ button, input, select, textarea {
     height: 85vh;
   }
   .hero .hero-content {
-    padding: 0 10px;
+    padding: 0 15px;
   }
   .hero .hero-content h1 {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 28px;
     margin-bottom: 10px;
   }
@@ -713,6 +824,42 @@ button, input, select, textarea {
     width: 160px;
     height: 160px;
     opacity: 0.5;
+  }
+}
+@media (max-width: 320px) {
+  .hero {
+    padding-top: 50px;
+    height: 80vh;
+  }
+  .hero .hero-content {
+    padding: 0 12px;
+  }
+  .hero .hero-content h1 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+  .hero .hero-content p {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 12px;
+  }
+  .hero .hero-content .btn-primary {
+    padding: 12px 0;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+  .hero::before {
+    width: 60px;
+    height: 64px;
+    opacity: 0.4;
+    right: 0;
+  }
+  .hero::after {
+    width: 130px;
+    height: 130px;
+    opacity: 0.4;
+    transform: translate(-10px, 180px);
   }
 }
 

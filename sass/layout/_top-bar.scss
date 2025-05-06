@@ -93,7 +93,7 @@
     }
 
     .language-currency {
-     display:none;
+     display: none;
     }
   }
 
@@ -107,6 +107,8 @@
     .promo-text {
       font-size: $font-size-12;
       padding: 0 $spacing-sm;
+      text-align: center;
+      width: 100%;
       
       .btn-small {
         width: 80px;
@@ -125,20 +127,35 @@
       
       .btn-small {
         margin-left: 0;
+        margin-top: $spacing-xs;
       }
     }
   }
 
   @media (max-width: 375px) {
-    padding: 2*$spacing-xs 0;
+    padding: $spacing-xs 0;
     
     .promo-text {
       font-size: $font-size-12;
+      line-height: 1.2;
       
       .btn-small {
         width: 70px;
         height: 18px;
         font-size: $font-size-10;
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    .promo-text {
+      font-size: $font-size-10;
+      padding: 2*$spacing-xs 0;
+      
+      .btn-small {
+        width: 65px;
+        height: 16px;
+        font-size: $font-size-8;
       }
     }
   }
